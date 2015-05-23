@@ -32,40 +32,40 @@ MA 02110-1301  USA
     width: 80%;
     background-color: azure;
     border: 1px solid;
-    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 15px 15px 0px 0px
+    /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 15px;
 }
 
 #menu {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 15%;
+    top: 17%;
     left: 10%;
     right: 10%;
-    height: 85%;
+    height: 83%;
     width: 12%;
     border: none;
     border-left: 1px solid;
     background-color: white;
-    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 0px 0px 0px 15px
+    /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 15px 0px 0px 15px
 }
 
 #conteudo {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 15%;
+    top: 17%;
     left: 22%;
     right: 10%;
-    height: 85%;
+    height: 83%;
     width: 68%; 
     border: 1px dashed darkblue;
     border-right: 1px solid;
     border-top: none;
     border-bottom: none;
     background-color: white; 
-    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 0px 0px 15px 0px
+    /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 0px 15px 15px 0px
 }

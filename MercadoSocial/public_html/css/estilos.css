@@ -45,3 +45,36 @@ a.menu:hover{
     font-weight: bold;
     color: darkgreen;
 }
+
+div.produto{
+    margin: 15px;
+    float: left;
+    border: 1px solid;
+    border-radius: 25px; 
+    border-color: lightgray;
+    width: 15%;
+    height: 400px;
+    text-align: center;
+}
+div.produto:hover{
+    border: 1px solid;
+    border-radius: 25px;
+    border-color: lightseagreen;
+    background: linear-gradient(white 40%, lightblue 99%);
+}
+
+p.nomeProduto{
+    color: darkblue;
+    font-size: 15px;
+    margin-top: 50px;
+    float: top;
+    text-align: center;
+}
+p.precoProduto{
+    color: darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    float: top;
+    text-align: center;
+}
