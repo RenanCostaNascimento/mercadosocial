@@ -21,7 +21,7 @@ MA 02110-1301  USA
     Author     : Renan
 */
 
-.background{
+body.background{
     background-image: url("../imagens/fundo.jpg");
     font-family: verdana, Helvetica, sans-serif;
     font-size: 12px;
@@ -30,20 +30,18 @@ MA 02110-1301  USA
     line-height: 1.5;
 }
 
-.listaItem{
-    /* cor escura para o fundo do formulário */
-    background:white;
+h1.menu {
+    color: lightseagreen;
+    text-align: center;
+}
 
-    /* o tamanho e o tipo da fonte no formulário */
-    font:12px arial, verdana, helvetica, sans-serif;
+a.menu{
+    text-decoration: none;
+    color: black;
+}
 
-    /* borda superior de 8px solida na cor cinza clara
-    no formulário */
-    border:8px solid black;
-
-    /* retira as bordas duplas nas células da tabela */
-    border-collapse:collapse;
-
-    /* a cor azul para as letras */
-    color:blue; 
+a.menu:hover{
+    font-size: larger;
+    font-weight: bold;
+    color: darkgreen;
 }

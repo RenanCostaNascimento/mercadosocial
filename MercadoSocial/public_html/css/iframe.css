@@ -30,8 +30,10 @@ MA 02110-1301  USA
     right: 10%;
     height: 15%;
     width: 80%;
-    background-color: darkblue;
-    border: none;
+    background-color: azure;
+    border: 1px solid;
+    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 15px 15px 0px 0px
 }
 
 #menu {
@@ -44,7 +46,10 @@ MA 02110-1301  USA
     height: 85%;
     width: 12%;
     border: none;
-    background-color: darkgrey
+    border-left: 1px solid;
+    background-color: white;
+    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 0px 0px 0px 15px
 }
 
 #conteudo {
@@ -56,8 +61,11 @@ MA 02110-1301  USA
     right: 10%;
     height: 85%;
     width: 68%; 
-    border: none;
+    border: 1px dashed darkblue;
+    border-right: 1px solid;
+    border-top: none;
+    border-bottom: none;
     background-color: white; 
+    /*superior/direito superior/direito inferior/direito inferior/esquerdo*/
+    border-radius: 0px 0px 15px 0px
 }
-
-
