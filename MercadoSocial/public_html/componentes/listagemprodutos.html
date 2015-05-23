@@ -21,35 +21,38 @@ MA 02110-1301  USA
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Foi preciso criar esse método para que ao clicar na logo toda a 
-        página fosse recarregada. Sem esse método, toda a página é carregada no
-        iframe 'conteudo'.-->
-        <script type="text/javascript">
-            function reload(){
-                window.top.location.reload();
-            }
-        </script>
+        <link rel="StyleSheet" type="text/css" href="../css/estilos.css">
     </head>
     <body>
         <table>
             <tr>
-                <td>
-                    <a href='' onclick="reload()">
-                        <img src="../Imagens/logo.jpg" alt="logotipo" >
+                <td><a href="detalheproduto.html">
+                        <img src="../imagens/produto1.webp"> 
                     </a>
                 </td>
                 <td>
-                    <input type="search" name="pesquisa" placeholder="Busque alguma coisa...">  
+                    Kingston SSD 2.5´ 120GB V300 SATA III <br/>
+                    Valor: 5 moedas sociais
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../imagens/produto2.webp"> 
                 </td>
                 <td>
-                    <input type="button" value="Logar">  
+                    Descrição... <br/>
+                    Valor: 5 moedas sociais
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../imagens/produto3.webp"> 
                 </td>
                 <td>
-                    <input type="button" value="Inscrever-se">  
+                    Descrição... <br/>
+                    Valor: 5 moedas sociais
                 </td>
             </tr>
         </table>
-        
-        
     </body>
 </html>
