@@ -24,18 +24,14 @@ MA 02110-1301  USA
         <!-- Foi preciso criar esse método para que ao clicar na logo toda a 
         página fosse recarregada. Sem esse método, toda a página é carregada no
         iframe 'conteudo'.-->
-        <script type="text/javascript">
-            function reload() {
-                window.top.location.href = "../index.html";
-            }
-        </script>
+        <script type="text/javascript" src="../javascript/scripts.js"></script>
         <link rel="stylesheet" href="../css/estilos.css" type="text/css">
     </head>
     <body>
         <table>
             <tr>
                 <td>
-                    <a href="" onclick="reload()">
+                    <a href="" onclick="carregarPagina('../index.html')">
                         <img src="../imagens/logo.gif" alt="logotipo" >
                     </a>
                 </td>

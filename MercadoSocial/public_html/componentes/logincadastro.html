@@ -22,6 +22,7 @@ MA 02110-1301  USA
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/estilos.css" type="text/css">
+        <script type="text/javascript" src="../javascript/scripts.js"></script>
     </head>
     <body>
         <div class="box">
@@ -30,7 +31,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Email:<br/>
-                        <input type="email" name="email" class="email"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this.value)"> 
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +42,7 @@ MA 02110-1301  USA
                 </tr>
                 <tr>
                     <td>
-                        <a href="../configuracaousuario.html" target="window">
+                        <a href="" onclick="carregarPagina('../configuracaousuario.html')">
                             <img src="../imagens/entre.png">
                         </a>
                     </td>
@@ -54,7 +55,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Email:<br/>
-                        <input type="email" name="email" class="email"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this.value)"> 
                     </td>
                 </tr>
                 <tr>
@@ -65,20 +66,25 @@ MA 02110-1301  USA
                 </tr>
                 <tr>
                     <td>
+                        CPF:<br/>
+                        <input type="text" name="cpf" onblur="validaCpf(this.value)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         Senha:<br/>
                         <input type="password" name="senha">
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         Confirmação de senha:<br/>
-                        <input type="password" name="confirmacaosenha">
+                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[1].value, this.value)">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="../configuracaousuario.html" target="window">
+                        <a href="" onclick="carregarPagina('../configuracaousuario.html')">
                             <img src="../imagens/cadastrar.png">
                         </a>
                     </td>
@@ -91,7 +97,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Email:<br/>
-                        <input type="email" name="email" class="email"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this.value)"> 
                     </td>
                 </tr>
                 <tr>
@@ -122,12 +128,12 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Confirmação de senha:<br/>
-                        <input type="password" name="confirmacaosenha">
+                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[2].value, this.value)">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="../configuracaoinstituicao.html" target="window">
+                        <a href="" onclick="carregarPagina('../configuracaoinstituicao.html')">
                             <img src="../imagens/cadastrar.png">
                         </a>
                     </td>

@@ -23,6 +23,7 @@ MA 02110-1301  USA
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/estilos.css" type="text/css">
+        <script type="text/javascript" src="../javascript/scripts.js"></script>
     </head>
     <body>
         <div class="box">
@@ -31,7 +32,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         CPF do voluntário:<br/>
-                        <input type="text" name="cpf"> 
+                        <input type="text" name="cpf" onblur="validarCpf(this.value)"> 
                     </td>
                 </tr>
                 <tr>

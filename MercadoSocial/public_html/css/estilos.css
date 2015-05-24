@@ -51,14 +51,13 @@ div.produto{
     border: 1px solid;
     border-radius: 25px; 
     border-color: lightgray;
-    width: 15%;
     height: 400px;
     text-align: center;
 }
 div.produto:hover{
     border: 1px solid;
     border-radius: 25px;
-    border-color: lightseagreen;
+    border-color: lightblue;
     background: linear-gradient(white 40%, lightblue 99%);
 }
 
@@ -130,5 +129,5 @@ input{
 }
 
 input.email, input.nome{
-    width: 300px;
+    width: 270px;
 }

@@ -26,10 +26,9 @@ MA 02110-1301  USA
     margin: 0;
     padding: 0;
     top: 0;
-    left: 10%;
-    right: 10%;
+    left: 15%;
     height: 15%;
-    width: 80%;
+    width: 70%;
     background-color: azure;
     border: 1px solid;
     /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
@@ -41,7 +40,7 @@ MA 02110-1301  USA
     margin: 0;
     padding: 0;
     top: 17%;
-    left: 10%;
+    left: 15%;
     right: 10%;
     height: 83%;
     width: 12%;
@@ -57,10 +56,9 @@ MA 02110-1301  USA
     margin: 0;
     padding: 0;
     top: 17%;
-    left: 22%;
-    right: 10%;
+    left: 27%;
     height: 83%;
-    width: 68%; 
+    width: 58%; 
     border: 1px dashed darkblue;
     border-right: 1px solid;
     border-top: none;
