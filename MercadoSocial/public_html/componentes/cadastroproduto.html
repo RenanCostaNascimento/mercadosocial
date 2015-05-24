@@ -22,14 +22,16 @@ MA 02110-1301  USA
         <title>Cadastro de Produto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/estilos.css" type="text/css">
     </head>
     <body>
-        <form action="form_cadastrarProduto.html" method="post">
+        <div class="box">
+            <h2>Dados do Produto</h2>
             <table>
                 <tr>
                     <td>
                         Nome do Produto:<br/>
-                        <input type="text" name="nome"> 
+                        <input type="text" name="nome" class="nome"> 
                     </td>
                 </tr>
                 <tr>
@@ -58,10 +60,12 @@ MA 02110-1301  USA
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="Salvar">
+                        <a href="">
+                            <img src="../imagens/salvar.png">
+                        </a>
                     </td>
                 </tr>
             </table>
-        </form>
+        </div>
     </body>
 </html>

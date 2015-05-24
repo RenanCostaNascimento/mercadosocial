@@ -41,7 +41,6 @@ a.menu{
 }
 
 a.menu:hover{
-    font-size: larger;
     font-weight: bold;
     color: darkgreen;
 }
@@ -92,7 +91,8 @@ div.detalheProdutoImagem{
     width: 35%;
     height: 350px;
     text-align: center;
-    vertical-align: middle;
+    display: table;
+
 }
 div.detalheProduto{
     margin: 10px;
@@ -105,9 +105,30 @@ div.detalheProduto{
     text-align: center;
 }
 
+.alinhamentoVertical{
+    display: table-cell;
+    vertical-align: middle;
+}
+
 h1.nomeProduto{
     color: darkblue;
 }
 h2{
     color: lightseagreen;
+}
+
+div.box{
+    margin: 10px;
+    float: left;
+    border: 1px solid;
+    border-radius: 25px; 
+    border-color: lightgray;
+}
+
+input{
+    border-radius: 3px;
+}
+
+input.email, input.nome{
+    width: 300px;
 }

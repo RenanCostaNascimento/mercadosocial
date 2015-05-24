@@ -19,15 +19,17 @@ MA 02110-1301  USA
 -->
 <html>
     <head>
+        <title>Mercado Social</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/estilos.css" type="text/css">
+        <link rel="stylesheet" href="css/iframe.css" type="text/css">
+        <link rel="stylesheet" href="css/estilos.css" type="text/css">
+        <base target="_parent" />
     </head>
-    <body>
-        <h1 class="menu">Configuração</h1>
-        <hr>
-        <a class="menu" href="configuracaoemail.html" target="conteudo"> Configurações de Email </a><br>
-        <a class="menu" href="gerarmoedasocial.html" target="conteudo"> Troca Cupom </a><br>        
+    <body class="background">
+        <iframe id="topo" src="componentes/barraadministrativa.html"></iframe>
+        <iframe id="menu" src="componentes/menuconfiguracaoinstituicao.html"></iframe>
+        <!--id e name do iframe abaixo são utilizados com o mesmo nome de forma a maximizar a gama de browsers compatíveis-->
+        <iframe id="conteudo" name="conteudo" src="componentes/configuracaoemail.html"></iframe>
     </body>
 </html>
-
