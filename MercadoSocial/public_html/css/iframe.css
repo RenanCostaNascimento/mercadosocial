@@ -26,9 +26,9 @@ MA 02110-1301  USA
     margin: 0;
     padding: 0;
     top: 0;
-    left: 15%;
-    height: 15%;
-    width: 70%;
+    left: 10%;
+    height: 17%;
+    width: 80%;
     background-color: azure;
     border: 1px solid;
     /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
@@ -39,10 +39,10 @@ MA 02110-1301  USA
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 17%;
-    left: 15%;
+    top: 19%;
+    left: 10%;
     right: 10%;
-    height: 83%;
+    height: 81%;
     width: 12%;
     border: none;
     border-left: 1px solid;
@@ -55,10 +55,10 @@ MA 02110-1301  USA
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 17%;
-    left: 27%;
-    height: 83%;
-    width: 58%; 
+    top: 19%;
+    left: 22%;
+    height: 81%;
+    width: 68%; 
     border: 1px dashed darkblue;
     border-right: 1px solid;
     border-top: none;
