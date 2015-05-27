@@ -14,10 +14,17 @@ and open the template in the editor.
         <base target="_parent" />
     </head>
     <body class="background">
-        <iframe id="topo" src="componentes/barraadministrativa.html"></iframe>
-        <iframe id="menu" src="componentes/menuprodutos.html"></iframe>
-        <!--id e name do iframe abaixo são utilizados com o mesmo nome de forma a maximizar a gama de browsers compatíveis-->
-        <iframe id="conteudo" name="conteudo" src="componentes/listagemprodutos.html"></iframe>
-        
+        <header>
+            <iframe id="topo" src="componentes/barraadministrativa.html"></iframe>
+        </header>
+
+        <nav>
+            <iframe id="menu" src="componentes/menuprodutos.html"></iframe>
+        </nav>
+
+        <main>
+            <!--id e name do iframe abaixo são utilizados com o mesmo nome de forma a maximizar a gama de browsers compatíveis-->
+            <iframe id="conteudo" name="conteudo" src="componentes/listagemprodutos.html"></iframe>
+        </main>
     </body>
 </html>
