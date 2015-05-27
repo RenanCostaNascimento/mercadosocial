@@ -30,6 +30,10 @@ body.background{
     line-height: 1.5;
 }
 
+#logo {
+    height: 70px;
+}
+
 h1.menu {
     color: lightseagreen;
     text-align: center;
