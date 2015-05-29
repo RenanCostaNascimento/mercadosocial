@@ -27,6 +27,7 @@ MA 02110-1301  USA
     padding: 0;
     top: 0;
     left: 10%;
+    max-height: 87px;
     height: 17%;
     width: 80%;
     background-color: azure;
