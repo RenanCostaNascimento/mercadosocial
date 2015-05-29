@@ -52,16 +52,15 @@ a.menu:hover{
 div.produto{
     margin: 15px;
     float: left;
-    border: 1px solid;
+    border: 2px solid;
     border-radius: 25px; 
     border-color: lightgray;
-    height: 400px;
+    padding: 20px;
+    height: 300px;
     text-align: center;
 }
 div.produto:hover{
-    border: 1px solid;
-    border-radius: 25px;
-    border-color: lightblue;
+    border-color: #3838bc;
     background: linear-gradient(white 40%, lightblue 99%);
 }
 
