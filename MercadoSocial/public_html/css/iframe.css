@@ -32,7 +32,7 @@ MA 02110-1301  USA
     background-color: azure;
     border: 1px solid;
     /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 15px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 #menu {
@@ -48,7 +48,7 @@ MA 02110-1301  USA
     border-left: 1px solid;
     background-color: white;
     /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 15px 0px 0px 15px
+    border-radius: 15px 0px 0px 0px
 }
 
 #conteudo {
@@ -65,5 +65,5 @@ MA 02110-1301  USA
     border-bottom: none;
     background-color: white; 
     /*superior/esquerdo superior/direito inferior/direito inferior/esquerdo*/
-    border-radius: 0px 15px 15px 0px
+    border-radius: 0px 15px 0px 0px
 }
