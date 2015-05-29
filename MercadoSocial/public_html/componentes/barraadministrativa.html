@@ -29,19 +29,24 @@ MA 02110-1301  USA
         <link rel="stylesheet" href="../css/estilos.css" type="text/css">
     </head>
     <body>
-        <table>
+        <table id="topbar">
             <tr>
-                <td>
+                <td class="topbar-item">
                     <a href="" onclick="carregarPagina('../index.html')">
                         <img id="logo" src="../imagens/logo.svg" alt="logotipo" >
                     </a>
                 </td>
-                <td>
+                <td class="topbar-item">
                     <input type="search" name="pesquisa" placeholder="Busque alguma coisa...">  
                 </td>
-                <td>
-                    <a class="menu" href="logincadastro.html" target="conteudo">
-                        LOGIN | CADASTRE-SE
+                <td class="topbar-item">
+                    <a class="menu" href="login.html" target="conteudo">
+                        LOGIN
+                    </a>
+                </td>
+                <td class="topbar-item">
+                    <a class="menu" href="cadastro.html" target="conteudo">
+                        CADASTRE-SE
                     </a>
                 </td>
             </tr>
