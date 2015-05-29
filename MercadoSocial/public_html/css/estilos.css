@@ -21,7 +21,7 @@ MA 02110-1301  USA
     Author     : Renan
 */
 
-body.background{
+body.background {
     background-image: url("../imagens/fundo.jpg");
     font-family: verdana, Helvetica, sans-serif;
     font-size: 12px;
@@ -39,17 +39,17 @@ h1.menu {
     text-align: center;
 }
 
-a.menu{
+a.menu {
     text-decoration: none;
     color: black;
 }
 
-a.menu:hover{
+a.menu:hover {
     font-weight: bold;
     color: darkgreen;
 }
 
-div.produto{
+div.produto {
     margin: 15px;
     float: left;
     border: 2px solid;
@@ -59,19 +59,21 @@ div.produto{
     height: 300px;
     text-align: center;
 }
-div.produto:hover{
+
+div.produto:hover {
     border-color: #3838bc;
     background: linear-gradient(white 40%, lightblue 99%);
 }
 
-p.nomeProduto{
+p.nomeProduto {
     color: darkblue;
     font-size: 15px;
     margin-top: 50px;
     float: top;
     text-align: center;
 }
-p.precoProduto{
+
+p.precoProduto {
     color: darkblue;
     font-size: 20px;
     font-weight: bold;
@@ -80,11 +82,12 @@ p.precoProduto{
     text-align: center;
     text-transform: uppercase;
 }
-p.justificado{
+
+p.justificado {
     text-align: justify;
 }
 
-div.detalheProdutoImagem{
+div.detalheProdutoImagem {
     margin: 10px;
     float: left;
     border: 1px solid;
@@ -96,7 +99,8 @@ div.detalheProdutoImagem{
     display: table;
 
 }
-div.detalheProduto{
+
+div.detalheProduto {
     margin: 10px;
     float: left;
     border: 1px solid;
@@ -107,19 +111,20 @@ div.detalheProduto{
     text-align: center;
 }
 
-.alinhamentoVertical{
+.alinhamentoVertical {
     display: table-cell;
     vertical-align: middle;
 }
 
-h1.nomeProduto{
+h1.nomeProduto {
     color: darkblue;
 }
-h2{
+
+h2 {
     color: lightseagreen;
 }
 
-div.box{
+div.box {
     margin: 10px;
     padding: 20px;
     float: left;
@@ -128,10 +133,10 @@ div.box{
     border-color: lightgray;
 }
 
-input{
+input {
     border-radius: 3px;
 }
 
-input.email, input.nome{
+input.email, input.nome {
     width: 270px;
 }
