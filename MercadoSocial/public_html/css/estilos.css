@@ -121,6 +121,7 @@ h2{
 
 div.box{
     margin: 10px;
+    padding: 20px;
     float: left;
     border: 1px solid;
     border-radius: 25px; 
