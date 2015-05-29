@@ -38,6 +38,11 @@ body.background {
     padding: 0px 10px 0px 10px;
 }
 
+.heartcoin {
+    content: url("../imagens/heartcoin.gif");
+    height: 20px;
+}
+
 h1.menu {
     color: lightseagreen;
     text-align: center;
