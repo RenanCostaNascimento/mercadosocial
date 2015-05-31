@@ -73,6 +73,26 @@ div.produto:hover {
     background: linear-gradient(white 40%, lightblue 99%);
 }
 
+div.left{
+    margin: 15px;
+    float: left;
+}
+div.top{
+    margin: 15px;
+    float: top;
+}
+
+div.comprasrealizadas{
+    border: 2px solid;
+    border-radius: 25px; 
+    border-color: lightgray;
+    height: 150px;
+}
+div.comprasrealizadas:hover{
+    border-color: #3838bc;
+    background: linear-gradient(to right, white 40%, lightblue 99%);
+}
+
 p.nomeProduto {
     color: darkblue;
     font-size: 15px;
@@ -136,8 +156,8 @@ h2 {
 
 div.box {
     margin: 10px;
+    width: auto;
     padding: 20px;
-    float: left;
     border: 1px solid;
     border-radius: 25px; 
     border-color: lightgray;
@@ -149,4 +169,8 @@ input {
 
 input.email, input.nome {
     width: 270px;
+}
+input.cupom {
+    height: 25px;
+    width: 500px;
 }
