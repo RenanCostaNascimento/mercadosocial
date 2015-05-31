@@ -32,13 +32,13 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         CPF do voluntário:<br/>
-                        <input type="text" name="cpf" onblur="validarCpf(this.value)"> 
+                        <input type="text" name="cpf" onblur="validaCpf(this, 'erro')"> 
                     </td>
                 </tr>
                 <tr>
                     <td>
                         Email do voluntário:<br/>
-                        <input type="email" name="email" class="email">
+                        <input type="email" name="email" class="email" onblur="validaEmail(this, 'erro')">
                     </td>
                 </tr>
                 <tr>

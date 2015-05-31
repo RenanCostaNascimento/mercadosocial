@@ -32,7 +32,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Email:<br/>
-                        <input type="email" name="email" class="email" onblur="validaEmail(this.value)"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this, 'erro')"> 
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         CPF:<br/>
-                        <input type="text" name="cpf" onblur="validaCpf(this.value)">
+                        <input type="text" name="cpf" onblur="validaCpf(this, 'erro')">
                     </td>
                 </tr>
                 <tr>
@@ -56,7 +56,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Confirmação de senha:<br/>
-                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[1].value, this.value)">
+                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[0], this, 'erro')">
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +74,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Email:<br/>
-                        <input type="email" name="email" class="email" onblur="validaEmail(this.value)"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this, 'erro')"> 
                     </td>
                 </tr>
                 <tr>
@@ -105,7 +105,7 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Confirmação de senha:<br/>
-                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[2].value, this.value)">
+                        <input type="password" name="confirmacaosenha" onblur="confirmarSenha(document.getElementsByName('senha')[1], this, 'erro')">
                     </td>
                 </tr>
                 <tr>

@@ -23,6 +23,7 @@ MA 02110-1301  USA
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/estilos.css" type="text/css">
+        <script type="text/javascript" src="../javascript/scripts.js"></script>
     </head>
     <body>
         <div class="box left">
@@ -31,13 +32,13 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Novo email:<br/>
-                        <input type="text" name="email1" class="email"> 
+                        <input type="email" name="email" class="email" onblur="validaEmail(this, 'erro')"> 
                     </td>
                 </tr>
                 <tr>
                     <td>
                         Repita o email:<br/>
-                        <input type="email" name="email2" class="email">
+                        <input type="email" name="confirmacaoEmail" class="email" onblur="confirmarSenha(document.getElementsByName('email')[0], this, 'erro')">
                     </td>
                 </tr>
                 <tr>
@@ -55,13 +56,13 @@ MA 02110-1301  USA
                 <tr>
                     <td>
                         Nova senha:<br/>
-                        <input type="password" name="senha1"> 
+                        <input type="password" name="senha"> 
                     </td>
                 </tr>
                 <tr>
                     <td>
                         Repita a senha:<br/>
-                        <input type="password" name="senha2">
+                        <input type="password" name="confirmacaoSenha" onblur="confirmarSenha(document.getElementsByName('senha')[0], this, 'erro')">
                     </td>
                 </tr>
                 <tr>

@@ -16,19 +16,22 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301  USA
  */
-function validaEmail(valor) {
+function validaEmail(elemento, classe) {
     exp_reg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
-    if (exp_reg.test(valor) === false) {
-        alert("Email inválido");
+    if (exp_reg.test(elemento.value) === false) {
+        adicionarClasse(elemento, classe);
+    }else{
+        removerClasse(elemento, classe);
     }
 }
 
-function validaCpf(strCPF) {
+function validaCpf(elemento, classe) {
     var Soma;
     var Resto;
+    var strCPF = elemento.value;
     Soma = 0;
     if (strCPF === "00000000000") {
-        alert("CPF inválido!");
+        adicionarClasse(elemento, classe);
         return false;
     }
     for (i = 1; i <= 9; i++) {
@@ -39,7 +42,7 @@ function validaCpf(strCPF) {
         Resto = 0;
     }
     if (Resto !== parseInt(strCPF.substring(9, 10))) {
-        alert("CPF inválido!");
+        adicionarClasse(elemento, classe);
         return false;
     }
     Soma = 0;
@@ -51,18 +54,55 @@ function validaCpf(strCPF) {
         Resto = 0;
     }
     if (Resto !== parseInt(strCPF.substring(10, 11))) {
-        alert("CPF inválido!");
+        adicionarClasse(elemento, classe);
         return false;
     }
+    removerClasse(elemento, classe);
     return true;
 }
 
-function confirmarSenha(senha, confirmacaoSenha) {
-    if (senha !== confirmacaoSenha) {
-        alert("Senhas diferentes!");
+function confirmarSenha(senha, confirmacaoSenha, classe) {
+    if (senha.value !== confirmacaoSenha.value) {
+        adicionarClasse(senha, classe);
+        adicionarClasse(confirmacaoSenha, classe);
+    }else{
+        removerClasse(senha, classe);
+        removerClasse(confirmacaoSenha, classe);
     }
 }
 
 function carregarPagina(pagina) {
     window.top.location.href = pagina;
+}
+
+function adicionarClasse(elemento, classe) {
+    var classeAtual = elemento.className;
+      
+    if (classeAtual.indexOf(classe) === -1) {
+        if ((classeAtual === null) || (classeAtual === "")) {
+            elemento.className = classe;
+        } else {
+            elemento.className += " " + classe;
+        }
+    }
+}
+ 
+function removerClasse(elemento, classe) {
+    var classeAtual = elemento.className;
+ 
+    if (classeAtual === classe) {
+        elemento.className = "";
+        return;
+    }
+ 
+    var valoresClasses = classeAtual.split(" ");
+    var filteredList = [];
+ 
+    for (var i = 0 ; i < valoresClasses.length; i++) {
+        if (classe !== valoresClasses[i]) {
+            filteredList.push(valoresClasses[i]);
+        }
+    }
+ 
+    elemento.className = filteredList.join(" ");
 }
