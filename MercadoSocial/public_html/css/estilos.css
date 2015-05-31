@@ -82,6 +82,7 @@ p.nomeProduto {
 }
 
 p.precoProduto {
+    padding: 20px;
     color: darkblue;
     font-size: 20px;
     font-weight: bold;
@@ -109,6 +110,7 @@ div.detalheProdutoImagem {
 }
 
 div.detalheProduto {
+    padding: 20px;
     margin: 10px;
     float: left;
     border: 1px solid;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mercado Social</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="StyleSheet" type="text/css" href="css/iframe.css">
+        <link rel="StyleSheet" type="text/css" href="css/estilos.css">
+        <base target="_parent" />
+    </head>
+    <body class="background">
+        <header>
+            <iframe id="topo" src="componentes/barraadministrativausuariologado.html"></iframe>
+        </header>
+
+        <nav>
+            <iframe id="menu" src="componentes/menuprodutos.html"></iframe>
+        </nav>
+
+        <main>
+            <!--id e name do iframe abaixo são utilizados com o mesmo nome de forma a maximizar a gama de browsers compatíveis-->
+            <iframe id="conteudo" name="conteudo" src="componentes/listagemprodutos.html"></iframe>
+        </main>
+    </body>
+</html>
