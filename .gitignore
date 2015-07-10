@@ -1,0 +1,10 @@
+# Maven build
+/target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Embedded glassfish server files
+gfembed*tmp/
