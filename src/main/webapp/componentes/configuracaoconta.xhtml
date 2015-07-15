@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2" >
+                <f:facet name="header">
+                    <p:outputLabel value="Configurações de Email"/>
+                </f:facet>
+
+                <p:outputLabel value="Novo email" for="email"/>
+                <p:inputText id="email" label="Email" value="#{configuracaoConta.email}"/>
+
+                <p:outputLabel value="Repita o email" for="repeteEmail"/>
+                <p:inputText id="repeteEmail" label="RepeteEmail" value="#{configuracaoConta.repeteEmail}"/>
+
+                <p:commandButton value="Salvar" action="#{configuracaoConta.mudarEmail()}"/>
+
+            </p:panelGrid>
+        </h:form>
+        
+        <h:form>
+            <p:panelGrid columns="2" >
+                <f:facet name="header">
+                    <p:outputLabel value="Configurações de Senha"/>
+                </f:facet>
+
+                <p:outputLabel value="Nova senha" for="senha"/>
+                <p:inputText id="senha" label="Senha" value="#{configuracaoConta.senha}"/>
+
+                <p:outputLabel value="Repita a senha" for="repeteSenha"/>
+                <p:inputText id="repeteSenha" label="RepeteSenha" value="#{configuracaoConta.repeteSenha}"/>
+
+                <p:commandButton value="Salvar" action="#{configuracaoConta.mudarSenha()}"/>
+
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
