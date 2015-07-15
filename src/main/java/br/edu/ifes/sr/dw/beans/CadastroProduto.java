@@ -32,7 +32,7 @@ import org.primefaces.model.UploadedFile;
 @RequestScoped
 public class CadastroProduto {
     
-    //Caminho em que as imagens ficar„o hospedadas no servidor
+    //Caminho em que as imagens ficar√£o hospedadas no servidor
     private static final String CAMINHO_ARQUIVO = "C:\\Users\\Renan\\Documents\\Git\\mercadosocial\\src\\main\\resources\\imagens\\uploads\\";
 
     private String nome;
@@ -79,7 +79,7 @@ public class CadastroProduto {
                 ContextMessage.addMessage("Sucesso", "O produto foi salvo com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(CadastroProduto.class.getName()).log(Level.SEVERE, null, ex);
-                ContextMessage.addMessage("Erro", "N„o foi possÌvel salvar o produto.");
+                ContextMessage.addMessage("Erro", "N√£o foi poss√≠vel salvar o produto.");
             }
 
         }

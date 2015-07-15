@@ -39,7 +39,7 @@ public class ConfiguracaoConta {
                 ContextMessage.addMessage("Sucesso", "O email foi alterado com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(ConfiguracaoConta.class.getName()).log(Level.SEVERE, null, ex);
-                ContextMessage.addMessage("Erro", "Ocorreu um erro na operação, tente novamente.");
+                ContextMessage.addMessage("Erro", "Ocorreu um erro na operaÃ§Ã£o, tente novamente.");
             }
         }
     }
@@ -53,7 +53,7 @@ public class ConfiguracaoConta {
                 ContextMessage.addMessage("Sucesso", "A senha foi alterada com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(ConfiguracaoConta.class.getName()).log(Level.SEVERE, null, ex);
-                ContextMessage.addMessage("Erro", "Ocorreu um erro na operação, tente novamente.");
+                ContextMessage.addMessage("Erro", "Ocorreu um erro na operaÃ§Ã£o, tente novamente.");
             }
         }
     }
