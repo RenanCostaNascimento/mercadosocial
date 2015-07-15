@@ -30,7 +30,7 @@ public class GeradorCupom {
     private int horasTrabalhadas;
 
     public void gerarCupom() {
-        //TODO: criar o cupom usando o cnpj da instituiÁ„o da sess„o
+        //TODO: criar o cupom usando o cnpj da institui√ß√£o da sess√£o
         Cupom cupom = new Cupom("12345679", cpfVoluntario, horasTrabalhadas);
 
         DaoCupom daoCupom = new DaoCupom();
