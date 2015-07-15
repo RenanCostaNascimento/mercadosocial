@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form enctype="multipart/form-data">
+            <p:growl id="message" showDetail="true"/>
+            <p:panelGrid columns="2" >
+                <f:facet name="header">
+                    <p:outputLabel value="Dados do Produto"/>
+                </f:facet>
+
+                <p:outputLabel value="Nome do produto" for="nome"/>
+                <p:inputText id="nome" label="Nome" value="#{cadastroProduto.nome}"/>
+
+                <p:outputLabel value="PreÃ§o unitÃ¡rio" for="preco"/>
+                <p:inputText id="preco" label="PreÃ§o" value="#{cadastroProduto.preco}"/>
+
+                <p:outputLabel value="Quantidade em Estoque" for="quantidade"/>
+                <p:inputText id="quantidade" label="Quantidade" value="#{cadastroProduto.quantidade}"/>
+
+                <p:outputLabel value="DescriÃ§Ã£o do Produto" for="descricao"/>
+                <p:inputTextarea id="descricao" label="DescriÃ§Ã£o" value="#{cadastroProduto.descricao}"/>
+
+                <p:outputLabel value="Imagem do Produto" for="imagem"/>
+                <p:fileUpload id="imagem" label="Imagem" multiple="false" allowTypes="*.jpg; *.png; *.gif;" mode="simple" value="#{cadastroProduto.imagem}"/>
+
+                <p:commandButton value="Salvar" action="#{cadastroProduto.salvar()}" ajax="false" update="mensagem"/>
+
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

@@ -6,6 +6,7 @@
 package br.edu.ifes.sr.dw.beans;
 
 import br.edu.ifes.sr.dw.persistencia.DaoCliente;
+import br.edu.ifes.sr.dw.utils.ContextMessage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
@@ -35,8 +36,10 @@ public class ConfiguracaoConta {
             try {
                 //TODO: usar o cpf do cliente logado
                 daoCliente.updateEmail(email, "123456");
+                ContextMessage.addMessage("Sucesso", "O email foi alterado com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(ConfiguracaoConta.class.getName()).log(Level.SEVERE, null, ex);
+                ContextMessage.addMessage("Erro", "Ocorreu um erro na operação, tente novamente.");
             }
         }
     }
@@ -47,9 +50,10 @@ public class ConfiguracaoConta {
 
             try {
                 //TODO: usar o cpf do cliente logado
-                daoCliente.updateSenha(senha, "123456");
+                ContextMessage.addMessage("Sucesso", "A senha foi alterada com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(ConfiguracaoConta.class.getName()).log(Level.SEVERE, null, ex);
+                ContextMessage.addMessage("Erro", "Ocorreu um erro na operação, tente novamente.");
             }
         }
     }

@@ -7,6 +7,7 @@ package br.edu.ifes.sr.dw.beans;
 
 import br.edu.ifes.sr.dw.modelos.Cupom;
 import br.edu.ifes.sr.dw.persistencia.DaoCupom;
+import br.edu.ifes.sr.dw.utils.ContextMessage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
@@ -36,8 +37,10 @@ public class GeradorCupom {
 
         try {
             daoCupom.insert(cupom);
+            ContextMessage.addMessage("Sucesso", "Operação realizada com sucesso.");
         } catch (Exception ex) {
             Logger.getLogger(GeradorCupom.class.getName()).log(Level.SEVERE, null, ex);
+            ContextMessage.addMessage("Erro", "A operação apresentou um erro. Tente novamente.");
         }
     }
 

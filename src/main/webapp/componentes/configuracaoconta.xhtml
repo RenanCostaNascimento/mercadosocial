@@ -11,9 +11,10 @@
     </h:head>
     <h:body>
         <h:form>
+            <p:growl id="message" showDetail="true"/>
             <p:panelGrid columns="2" >
                 <f:facet name="header">
-                    <p:outputLabel value="Configurações de Email"/>
+                    <p:outputLabel value="ConfiguraÃ§Ãµes de Email"/>
                 </f:facet>
 
                 <p:outputLabel value="Novo email" for="email"/>
@@ -22,7 +23,7 @@
                 <p:outputLabel value="Repita o email" for="repeteEmail"/>
                 <p:inputText id="repeteEmail" label="RepeteEmail" value="#{configuracaoConta.repeteEmail}"/>
 
-                <p:commandButton value="Salvar" action="#{configuracaoConta.mudarEmail()}"/>
+                <p:commandButton value="Salvar" action="#{configuracaoConta.mudarEmail()}" update="message"/>
 
             </p:panelGrid>
         </h:form>
@@ -30,7 +31,7 @@
         <h:form>
             <p:panelGrid columns="2" >
                 <f:facet name="header">
-                    <p:outputLabel value="Configurações de Senha"/>
+                    <p:outputLabel value="ConfiguraÃ§Ãµes de Senha"/>
                 </f:facet>
 
                 <p:outputLabel value="Nova senha" for="senha"/>
