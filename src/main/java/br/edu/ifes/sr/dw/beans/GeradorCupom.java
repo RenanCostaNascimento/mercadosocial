@@ -37,10 +37,11 @@ public class GeradorCupom {
 
         try {
             daoCupom.insert(cupom);
-            ContextMessage.addMessage("Sucesso", "Opera��o realizada com sucesso.");
+
+            ContextMessage.addMessage("Sucesso", "Operação realizada com sucesso.");
         } catch (Exception ex) {
             Logger.getLogger(GeradorCupom.class.getName()).log(Level.SEVERE, null, ex);
-            ContextMessage.addMessage("Erro", "A opera��o apresentou um erro. Tente novamente.");
+            ContextMessage.addMessage("Erro", "A operação apresentou um erro. Tente novamente.");
         }
     }
 

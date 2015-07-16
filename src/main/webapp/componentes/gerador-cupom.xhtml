@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <p:growl id="message" showDetail="true"/>
+                <p:panelGrid columns="2" >
+                    <f:facet name="header">
+                        <p:outputLabel value="Dados do Voluntário"/>
+                    </f:facet>
+
+                    <p:outputLabel value="CPF" for="cpf"/>
+                    <p:inputText id="cpf" label="CPF" value="#{geradorCupom.cpfVoluntario}"/>
+
+                    <p:outputLabel value="Email" for="email"/>
+                    <p:inputText id="email" label="Email" value="#{geradorCupom.emailVoluntario}"/>
+
+                    <p:outputLabel value="Horas Trabalhadas" for="horas"/>
+                    <p:inputText id="horas" label="Horas" value="#{geradorCupom.horasTrabalhadas}"/>                
+
+                    <p:commandButton value="Gerar Cupom" action="#{geradorCupom.gerarCupom()}"/>
+
+                </p:panelGrid>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>

@@ -29,7 +29,7 @@ import org.primefaces.model.UploadedFile;
 @RequestScoped
 public class CadastroProduto {
     
-    //Caminho em que as imagens ficar�o hospedadas no servidor
+    //Caminho em que as imagens ficarão hospedadas no servidor
     private static final String CAMINHO_ARQUIVO = "C:\\Users\\Renan\\Documents\\Git\\mercadosocial\\src\\main\\resources\\imagens\\uploads\\";
 
     private String nome;
