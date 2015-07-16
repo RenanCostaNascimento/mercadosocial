@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <p:dataTable var="prod" value="#{listagemProdutos.produtos}">
+            <f:facet name="header">
+                <p:outputLabel value="Produtos em Oferta"/>
+            </f:facet>
+            <p:column headerText="Nome">
+                <h:outputText value="#{prod.nome}" />
+            </p:column>
+
+            <p:column headerText="Preço">
+                <h:outputText value="#{prod.preco}" />
+            </p:column>
+            
+            <p:column headerText="Descrição">
+                <h:outputText value="#{prod.descricao}" />
+            </p:column>
+
+            <p:column headerText="Imagem">
+                <p:graphicImage value="#{prod.imagem}" width="200px" height="150px"/>
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>

@@ -60,7 +60,7 @@ public class DaoCupom extends Dao {
         return null;
     }
 
-    public void cupomRestatado(int idCupom) throws Exception {
+    public void cupomResgatado(int idCupom) throws Exception {
         open();
 
         stmt = con.prepareStatement("UPDATE cupom SET resgatado = true WHERE idCupom = ?");

@@ -14,8 +14,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Produto {
-    
+public class Produto extends Modelo {
+
     private String nome;
     private double preco;
     private int quantidade;
@@ -23,6 +23,15 @@ public class Produto {
     private String imagem;
 
     public Produto(String nome, double preco, int quantidade, String descricao, String imagem) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+        this.descricao = descricao;
+        this.imagem = imagem;
+    }
+
+    public Produto(int id, String nome, double preco, int quantidade, String descricao, String imagem) {
+        this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;

@@ -10,8 +10,6 @@ import br.edu.ifes.sr.dw.persistencia.DaoCliente;
 import br.edu.ifes.sr.dw.persistencia.DaoClienteCupom;
 import br.edu.ifes.sr.dw.persistencia.DaoCupom;
 import br.edu.ifes.sr.dw.utils.ContextMessage;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +47,7 @@ public class GeradorMoedaSocial {
                 daoClienteCupom.inserirCupomCliente(1, cupom.getId());
                 //TODO: pegar o cpf da sessao do usuario
                 daoCliente.trocarCupom(1, cupom);
-                daoCupom.cupomRestatado(cupom.getId());
+                daoCupom.cupomResgatado(cupom.getId());
                 //TODO: adicionar o cupom trocado na lista de cupons do cliente da sessao
                 ContextMessage.addMessage("Sucesso", "Operação realizada com sucesso.");
             }else{

@@ -7,6 +7,7 @@ package br.edu.ifes.sr.dw.beans;
 
 import br.edu.ifes.sr.dw.modelos.Produto;
 import br.edu.ifes.sr.dw.persistencia.DaoProduto;
+import br.edu.ifes.sr.dw.utils.Constants;
 import br.edu.ifes.sr.dw.utils.ContextMessage;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,9 +29,6 @@ import org.primefaces.model.UploadedFile;
 @ManagedBean(name = "cadastroProduto")
 @RequestScoped
 public class CadastroProduto {
-    
-    //Caminho em que as imagens ficarão hospedadas no servidor
-    private static final String CAMINHO_ARQUIVO = "C:\\Users\\Renan\\Documents\\Git\\mercadosocial\\src\\main\\resources\\imagens\\uploads\\";
 
     private String nome;
     private double preco;
@@ -42,8 +40,8 @@ public class CadastroProduto {
     public void carregarImagem() {
         byte[] foto = imagem.getContents();
         nomeImagem = imagem.getFileName();
-        
-        String arquivo = CAMINHO_ARQUIVO + nomeImagem;
+
+        String arquivo = Constants.CAMINHO_HOSPEDAGEM_ARQUIVO + nomeImagem;
         criaImagem(foto, arquivo);
     }
 
