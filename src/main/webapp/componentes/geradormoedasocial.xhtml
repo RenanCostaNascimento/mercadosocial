@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="message" showDetail="true"/>
+            <p:panelGrid columns="2" >
+                <f:facet name="header">
+                    <p:outputLabel value="Dados do Cupom"/>
+                </f:facet>
+
+                <p:outputLabel value="Código do Cupom" for="codigo"/>
+                <p:inputText id="codigo" label="Código" value="#{geradorMoeda.codigo}"/>
+
+                <p:commandButton value="Trocar" action="#{geradorMoeda.gerarMoedaSocial()}" update="message"/>
+
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+
+    <hr/>
+
+    <p:dataTable var="cupons" value="#{geradorMoeda.cupons}">
+        <f:facet name="header">
+            <p:outputLabel value="Histórico de Troca de Cupom"/>
+        </f:facet>
+        <p:column headerText="Moedas Resgatadas">
+            <h:outputText value="#{cupons.moedasSociais}" />
+        </p:column>
+
+        <p:column headerText="Data de Resgate">
+            <h:outputText value="#{cupons.dataTroca}" />
+        </p:column>
+    </p:dataTable>
+</html>

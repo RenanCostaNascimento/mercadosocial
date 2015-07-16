@@ -13,11 +13,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
 import lombok.Getter;
 import lombok.Setter;
 import org.primefaces.model.UploadedFile;
@@ -32,7 +29,7 @@ import org.primefaces.model.UploadedFile;
 @RequestScoped
 public class CadastroProduto {
     
-    //Caminho em que as imagens ficarão hospedadas no servidor
+    //Caminho em que as imagens ficarï¿½o hospedadas no servidor
     private static final String CAMINHO_ARQUIVO = "C:\\Users\\Renan\\Documents\\Git\\mercadosocial\\src\\main\\resources\\imagens\\uploads\\";
 
     private String nome;
@@ -79,7 +76,7 @@ public class CadastroProduto {
                 ContextMessage.addMessage("Sucesso", "O produto foi salvo com sucesso.");
             } catch (Exception ex) {
                 Logger.getLogger(CadastroProduto.class.getName()).log(Level.SEVERE, null, ex);
-                ContextMessage.addMessage("Erro", "Não foi possível salvar o produto.");
+                ContextMessage.addMessage("Erro", "NÃ£o foi possÃ­vel salvar o produto.");
             }
 
         }
