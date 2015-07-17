@@ -5,24 +5,19 @@
  */
 package br.edu.ifes.sr.dw.modelos;
 
-import java.util.List;
+import java.util.Calendar;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
  *
- * @author Renan
+ * @author 20121BSI0252
  */
 @Getter
 @Setter
-public class Cliente {
+public class Compra {
     
-    private String nome;
-    private String cpf;
-    private String email;
-    private String moedasSociais;
-    private String senha;
-    private List<Cupom> cuponsResgatados;
-    private List<Compra> comprasRealizadas;
+    private Calendar dataCompra;
+    Produto produto;
     
 }

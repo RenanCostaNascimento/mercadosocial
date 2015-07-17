@@ -22,6 +22,8 @@ public class Instituicao {
     private String email;
     private String cnpj;
     private String senha;
+    private TipoInstituicao tipoInstituicao;
     private List<Cupom> cuponsGerados;
+    private List<Produto> produtosCadastrados;
     
 }

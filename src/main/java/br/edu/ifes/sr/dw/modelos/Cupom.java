@@ -18,23 +18,34 @@ import lombok.Setter;
 public class Cupom extends Modelo{
     
     private String codigo;
-    private String cpfCliente;
+    private Cliente cliente;
+    private Instituicao instituicao;
     private int moedasSociais;
     private boolean resgatado;
+    
+    public static Cupom gerarCupom(Instituicao instituicao, Cliente cliente, int horasTrabalhadas){
+        return new Cupom(instituicao, cliente, horasTrabalhadas);
+    }
 
-    public Cupom(String cnpjInstituicao, String cpfCliente, int horasTrabalhadas) {
-        String chave = cnpjInstituicao+cpfCliente+Calendar.getInstance().toString();
+    public Cupom() {
+        
+    }
+    
+    private Cupom(Instituicao instituicao, Cliente cliente, int horasTrabalhadas) {
+        String chave = instituicao.getCnpj()+cliente.getCpf()+Calendar.getInstance().toString();
         
         this.codigo = String.valueOf(chave.hashCode());
-        this.cpfCliente = cpfCliente;
+        this.instituicao = instituicao;
+        this.cliente = cliente;
         this.moedasSociais = horasTrabalhadas*5;
         this.resgatado = false;
     } 
     
-    public Cupom(int id, String codigo, String cpfCliente, int moedasSociais, boolean resgatado){
+    public Cupom(int id, String codigo, Instituicao instituicao, Cliente cliente, int moedasSociais, boolean resgatado){
         this.id = id;
         this.codigo = codigo;
-        this.cpfCliente = cpfCliente;
+        this.instituicao = instituicao;
+        this.cliente = cliente;
         this.moedasSociais = moedasSociais;
         this.resgatado = resgatado;
     }

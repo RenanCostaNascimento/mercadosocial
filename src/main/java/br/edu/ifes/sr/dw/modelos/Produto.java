@@ -21,6 +21,7 @@ public class Produto extends Modelo {
     private int quantidade;
     private String descricao;
     private String imagem;
+    private Instituicao instituicao;
 
     public Produto(String nome, double preco, int quantidade, String descricao, String imagem) {
         this.nome = nome;
