@@ -5,7 +5,20 @@
  */
 package br.edu.ifes.sr.dw.modelos;
 
+import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,13 +28,34 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Cupom extends Modelo{
+@Entity
+@Table(name = "cupom")
+public class Cupom implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+    
+    @Column(name = "codigo")
     private String codigo;
+    
+    @ManyToOne
+    @JoinColumn(name = "idcliente")
     private Cliente cliente;
+    
+    @ManyToOne
+    @JoinColumn(name = "idinstituicao")
     private Instituicao instituicao;
+    
+    @Column(name = "moedassociais")
     private int moedasSociais;
+    
+    @Column(name = "resgatado")
     private boolean resgatado;
+    
+    @Temporal(TemporalType.DATE)
+    private Date dataExpiracao;
     
     public static Cupom gerarCupom(Instituicao instituicao, Cliente cliente, int horasTrabalhadas){
         return new Cupom(instituicao, cliente, horasTrabalhadas);
@@ -48,5 +82,5 @@ public class Cupom extends Modelo{
         this.cliente = cliente;
         this.moedasSociais = moedasSociais;
         this.resgatado = resgatado;
-    }
+    }    
 }

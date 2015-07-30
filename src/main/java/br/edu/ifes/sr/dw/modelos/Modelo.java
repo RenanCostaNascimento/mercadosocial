@@ -5,6 +5,10 @@
  */
 package br.edu.ifes.sr.dw.modelos;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +20,9 @@ import lombok.Setter;
 @Setter
 public class Modelo {
     
-    protected int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    protected Integer id;
     
 }
