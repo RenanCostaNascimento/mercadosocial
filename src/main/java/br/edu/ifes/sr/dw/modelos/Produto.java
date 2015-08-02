@@ -56,20 +56,25 @@ public class Produto implements Serializable {
     @JoinColumn(name = "idinstituicao")
     private Instituicao instituicao;
 
-    public Produto(String nome, double preco, int quantidade, String descricao, String imagem) {
+    public Produto() {
+    }
+
+    public Produto(String nome, double preco, int quantidade, String descricao, String imagem, Instituicao instituicao) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.descricao = descricao;
         this.imagem = imagem;
+        this.instituicao = instituicao;
     }
 
-    public Produto(int id, String nome, double preco, int quantidade, String descricao, String imagem) {
+    public Produto(int id, String nome, double preco, int quantidade, String descricao, String imagem, Instituicao instituicao) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.descricao = descricao;
         this.imagem = imagem;
+        this.instituicao = instituicao;
     }
 }

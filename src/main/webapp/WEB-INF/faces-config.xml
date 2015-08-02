@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+              version="2.1">
+        
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>contribuidora</from-outcome>
+            <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>beneficente</from-outcome>
+            <to-view-id>/pagina-inicial-instituicao-beneficente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/pagina-inicial-cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/configuracao-contribuidora.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>novoProduto</from-outcome>
+            <to-view-id>/configuracao-contribuidora-novo-produto.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/cadastrar-produto.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>sucesso</from-outcome>
+            <to-view-id>/configuracao-contribuidora-novo-produto.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cadastro</from-outcome>
+            <to-view-id>/tela-de-cadastro.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+       
+</faces-config>

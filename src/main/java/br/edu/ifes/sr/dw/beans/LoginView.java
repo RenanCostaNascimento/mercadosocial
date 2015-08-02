@@ -5,50 +5,70 @@
  */
 package br.edu.ifes.sr.dw.beans;
 
-import javax.faces.application.FacesMessage;
+import br.edu.ifes.sr.dw.modelos.Cliente;
+import br.edu.ifes.sr.dw.modelos.Instituicao;
+import br.edu.ifes.sr.dw.modelos.TipoInstituicao;
+import br.edu.ifes.sr.dw.persistencia.ClienteDao;
+import br.edu.ifes.sr.dw.persistencia.DaoFactory;
+import br.edu.ifes.sr.dw.persistencia.InstituicaoDao;
+import br.edu.ifes.sr.dw.utils.ContextMessage;
+import java.util.Map;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
+import lombok.Getter;
+import lombok.Setter;
 
-import org.primefaces.context.RequestContext;
-
-@ManagedBean
+@Getter
+@Setter
+@ManagedBean(name = "loginView")
+@SessionScoped
 public class LoginView {
 
-    private String username;
+    @ManagedProperty(value = "#{email}")
+    private String email;
+    private String senha;
 
-    private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void login(ActionEvent event) {
-        RequestContext context = RequestContext.getCurrentInstance();
-        FacesMessage message = null;
-        boolean loggedIn = false;
-
-        if (username != null && username.equals("admin") && password != null && password.equals("admin")) {
-            loggedIn = true;
-            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bem vindo", username);
+    public String login() {
+        String resposta = null;
+        InstituicaoDao instituicaoDao = DaoFactory.criarInstituicaoDao();
+        Instituicao instituicao = instituicaoDao.validarLogin(email, senha);
+        if (instituicao != null) {
+            if (instituicao.getTipoInstituicao().equals(TipoInstituicao.CONTRIBUIDORA)) {
+                resposta = "contribuidora";
+            } else {
+                resposta = "beneficente";
+            }
+            ContextMessage.addMessage("Sucesso", "Logado com sucesso!");
+            return resposta;
         } else {
-            loggedIn = false;
-            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Erro de Login", "Credênciais Inválidas");
+            ClienteDao clienteDao = DaoFactory.criarClienteDao();
+            Cliente cliente = clienteDao.validarLogin(email, senha);
+            if (cliente != null) {
+                resposta = "cliente";
+                ContextMessage.addMessage("Sucesso", "Logado com sucesso!");
+                return resposta;
+            }
         }
+        ContextMessage.addMessage("Falha", "Email ou senha inválidos.");
+        return resposta;
+    }
 
-        FacesContext.getCurrentInstance().addMessage(null, message);
-        context.addCallbackParam("loggedIn", loggedIn);
+    public String redirecionarLogin() {
+        return "login";
+    }
+
+    public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "logout";
+    }
+
+    public static String pegarEmailUsuarioLogado() {
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        Map sessionMap = externalContext.getSessionMap();
+        LoginView loginView = (LoginView) sessionMap.get("loginView");
+        return loginView.getEmail();
     }
 }

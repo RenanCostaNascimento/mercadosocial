@@ -12,7 +12,7 @@
     <h:body>
         <h:form>
             <p:growl id="message" showDetail="true"/>
-            <p:dataTable var="produto" value="#{listagemProdutos.produtos}">
+            <p:dataTable var="produto" value="#{produtosInstituicao.produtos}">
                 <f:facet name="header">
                     <p:outputLabel value="Produtos em Oferta"/>
                 </f:facet>
@@ -32,13 +32,21 @@
                     <p:graphicImage value="#{produto.imagem}" width="200px" height="150px"/>
                 </p:column>
 
-                <p:column headerText="Comprar">
-                    <h:commandLink action="#{listagemProdutos.comprar()}">
+                <p:column headerText="Editar">
+                    <h:commandLink action="#{produtosInstituicao.editar()}">
                         <h:graphicImage value="imagens\editar.png" style="border:0"/>
-                        <f:setPropertyActionListener target="#{listagemProdutos.produto}" value="#{produto}"/>
+                        <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
+                    </h:commandLink>
+                </p:column>
+                
+                <p:column headerText="Excluir">
+                    <h:commandLink action="#{produtosInstituicao.excluir()}">
+                        <h:graphicImage value="imagens\excluir.png" style="border:0"/>
+                        <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
                     </h:commandLink>
                 </p:column>
             </p:dataTable>
+            <p:commandButton value="Novo Produto" action="#{produtosInstituicao.novo()}"/>
         </h:form>
     </h:body>
 </html>

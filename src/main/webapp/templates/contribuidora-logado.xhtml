@@ -7,13 +7,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="templates/base.xhtml">
-        <ui:define name="titulo">Login | Mercado Social</ui:define>
+    <h:head>
+        <title><ui:insert name="titulo">Mercado Social</ui:insert></title>
+        <meta charset="UTF-8"></meta>
+    </h:head>
 
-        <ui:define name="conteudo">
-
-            <ui:include src="componentes/login-componente.xhtml" />
-
-        </ui:define>
-    </ui:composition>
+    <h:body>
+        <ui:include src="../componentes/barra-superior-contribuidora.xhtml" />
+        <br />
+        <ui:insert name="conteudo" />
+    </h:body>
 </html>

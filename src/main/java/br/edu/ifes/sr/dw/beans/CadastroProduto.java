@@ -5,8 +5,11 @@
  */
 package br.edu.ifes.sr.dw.beans;
 
+import br.edu.ifes.sr.dw.modelos.Instituicao;
 import br.edu.ifes.sr.dw.modelos.Produto;
-import br.edu.ifes.sr.dw.persistencia.DaoProduto;
+import br.edu.ifes.sr.dw.persistencia.DaoFactory;
+import br.edu.ifes.sr.dw.persistencia.InstituicaoDao;
+import br.edu.ifes.sr.dw.persistencia.ProdutoDao;
 import br.edu.ifes.sr.dw.utils.Constants;
 import br.edu.ifes.sr.dw.utils.ContextMessage;
 import java.io.FileNotFoundException;
@@ -41,7 +44,7 @@ public class CadastroProduto {
         byte[] foto = imagem.getContents();
         nomeImagem = imagem.getFileName();
 
-        String arquivo = Constants.CAMINHO_HOSPEDAGEM_ARQUIVO + nomeImagem;
+        String arquivo = Constants.CAMINHO_HOSPEDAGEM_ARQUIVO_PRODUTO + nomeImagem;
         criaImagem(foto, arquivo);
     }
 
@@ -53,7 +56,6 @@ public class CadastroProduto {
             fos.write(bytes);
             fos.flush();
             fos.close();
-            System.out.println("Salvo");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(CadastroProduto.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -61,22 +63,27 @@ public class CadastroProduto {
         }
     }
 
-    public void salvar() {
-
+    public String salvar() {
         carregarImagem();
+        String resposta = null;
         if (imagem != null) {
 
-            Produto produto = new Produto(nome, preco, quantidade, descricao, nomeImagem);
-            DaoProduto daoProduto = new DaoProduto();
+            InstituicaoDao instituicaoDao = DaoFactory.criarInstituicaoDao();
+            Instituicao instituicao = instituicaoDao.buscar(LoginView.pegarEmailUsuarioLogado());
+
+            Produto produto = new Produto(nome, preco, quantidade, descricao, Constants.CAMINHO_ACESSO_ARQUIVO_PRODUTO + nomeImagem, instituicao);
+            ProdutoDao produtoDao = DaoFactory.criarProdutoDao();
 
             try {
-                daoProduto.insert(produto);
+                produtoDao.salvar(produto);
                 ContextMessage.addMessage("Sucesso", "O produto foi salvo com sucesso.");
+                resposta = "sucesso";
+                return resposta;
             } catch (Exception ex) {
                 Logger.getLogger(CadastroProduto.class.getName()).log(Level.SEVERE, null, ex);
                 ContextMessage.addMessage("Erro", "Não foi possível salvar o produto.");
             }
-
         }
+        return resposta;
     }
 }
