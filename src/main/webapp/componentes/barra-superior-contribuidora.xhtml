@@ -13,13 +13,13 @@
         <ui:composition>
 
             <h:form>
+                <h:graphicImage value="imagens\logo-with-small-title.svg" style="border:0"/>
                 <p:menubar>
-                    <p:menuitem value="Mercado Social" />
 
                     <f:facet name="options">
                         <!--<p:commandButton value="7" icon="fa fa-heart-o" />-->
-                        <p:commandButton value="Logout" icon="fa fa-cog" action="#{loginView.logout()}"/>
-                        <p:commandButton type="button" value="Listar Produtos" />
+                        <p:commandButton value="Logout" action="#{loginView.logout()}"/>
+                        <p:commandButton value="Listar Produtos" action="#{barraSuperior.listarProdutos()}"/>
                     </f:facet>
                 </p:menubar>
             </h:form>

@@ -32,19 +32,27 @@ class InstituicaoDaoHibernate extends DaoHibernate implements InstituicaoDao {
 
     @Override
     public Instituicao validarLogin(String email, String senha) {
+        session.getTransaction().begin();
         String hql = "select i from Instituicao i where i.email = :email and i.senha = :senha";
         Query consulta = session.createQuery(hql);
         consulta.setString("email", email);
         consulta.setString("senha", senha);
-        return (Instituicao) consulta.uniqueResult();
+        Instituicao instituicao = (Instituicao) consulta.uniqueResult();
+        session.getTransaction().commit();
+        session.close();
+        return instituicao;
 
     }
 
     @Override
     public Instituicao buscar(String email) {
+        session.getTransaction().begin();
         String hql = "select i from Instituicao i where i.email = :email";
         Query consulta = session.createQuery(hql);
         consulta.setString("email", email);
-        return (Instituicao) consulta.uniqueResult();
+        Instituicao instituicao = (Instituicao) consulta.uniqueResult();
+        session.getTransaction().commit();
+        session.close();
+        return instituicao;
     }
 }

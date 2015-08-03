@@ -77,7 +77,7 @@ public class CadastroProduto {
             try {
                 produtoDao.salvar(produto);
                 ContextMessage.addMessage("Sucesso", "O produto foi salvo com sucesso.");
-                resposta = "sucesso";
+                resposta = "produtoCriado";
                 return resposta;
             } catch (Exception ex) {
                 Logger.getLogger(CadastroProduto.class.getName()).log(Level.SEVERE, null, ex);

@@ -13,20 +13,22 @@
         <h:form>
             <!--LOGIN-->
             <p:growl id="message" showDetail="true"/>
-            <h:panelGrid columns="2">
+            <p:panelGrid columns="2">
                 <f:facet name="header">
                     <p:outputLabel value="Login"/>
                 </f:facet>
-                <h:outputLabel for="email" value="Email" />
+                <p:outputLabel for="email" value="Email" />
                 <p:inputText id="email" value="#{loginView.email}" required="true" label="email" />
 
-                <h:outputLabel for="senha" value="Senha" />
+                <p:outputLabel for="senha" value="Senha" />
                 <p:password id="senha" value="#{loginView.senha}" required="true" label="senha" />
 
                 <f:facet name="footer">
-                    <p:commandButton value="Login" update="message" action="#{loginView.login()}" />
+                    <center>
+                        <p:commandButton value="Login" update="message" action="#{loginView.login()}" />
+                    </center>
                 </f:facet>  
-            </h:panelGrid>
+            </p:panelGrid>
         </h:form>
     </h:body>
 </html>

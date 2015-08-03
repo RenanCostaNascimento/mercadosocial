@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @ManagedBean(name = "produtosInstituicao")
-@RequestScoped
+@ViewScoped
 public class ListagemProdutosInstituicao {
     
     private Produto produto;
@@ -45,15 +45,20 @@ public class ListagemProdutosInstituicao {
         
     }
     
-    public void excluir(){
+    public String excluir(){
+        String resultado = null;
         ProdutoDao produtoDao =  DaoFactory.criarProdutoDao();
         try {
             produtoDao.excluir(this.produto);
             ContextMessage.addMessage("Sucesso", "Produto excluído.");
+            resultado = "produtoExcluido";
+            return resultado;
+            
         } catch (Exception ex) {
             Logger.getLogger(ListagemProdutosInstituicao.class.getName()).log(Level.SEVERE, null, ex);
             ContextMessage.addMessage("Falha", "Não foi possível excluir o produto.");
         }
+        return resultado;
     }
     
     public String novo(){

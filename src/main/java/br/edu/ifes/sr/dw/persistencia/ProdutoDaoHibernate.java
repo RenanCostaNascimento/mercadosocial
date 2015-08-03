@@ -41,15 +41,23 @@ public class ProdutoDaoHibernate extends DaoHibernate implements ProdutoDao {
 
     @Override
     public List<Produto> listarTodos() {
-        return session.createCriteria(Produto.class).list();
+        session.getTransaction().begin();
+        List<Produto> lista = session.createCriteria(Produto.class).list();
+        session.getTransaction().commit();
+        session.close();
+        return lista;
     }
 
     @Override
     public List<Produto> listarInstituicao(String email) {
+        session.getTransaction().begin();
         String hql = "select p from Produto p inner join p.instituicao i where i.email = :email";
         Query consulta = session.createQuery(hql);
         consulta.setString("email", email);
-        return (List<Produto>) consulta.list();
+        List<Produto> lista = (List<Produto>) consulta.list();
+        session.getTransaction().commit();
+        session.close();
+        return lista;
     }
 
 }

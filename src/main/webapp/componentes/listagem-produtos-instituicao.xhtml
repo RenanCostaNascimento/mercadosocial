@@ -17,33 +17,45 @@
                     <p:outputLabel value="Produtos em Oferta"/>
                 </f:facet>
                 <p:column headerText="Nome">
-                    <h:outputText value="#{produto.nome}" />
+                    <center>
+                        <h:outputText value="#{produto.nome}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Preço">
-                    <h:outputText value="#{produto.preco}" />
+                    <center>
+                        <h:outputText value="#{produto.preco}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Descrição">
-                    <h:outputText value="#{produto.descricao}" />
+                    <center>
+                        <h:outputText value="#{produto.descricao}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Imagem">
-                    <p:graphicImage value="#{produto.imagem}" width="200px" height="150px"/>
+                    <center>
+                        <p:graphicImage value="#{produto.imagem}" style="border:0" width="200px" height="150px"/>
+                    </center>
                 </p:column>
 
                 <p:column headerText="Editar">
-                    <h:commandLink action="#{produtosInstituicao.editar()}">
-                        <h:graphicImage value="imagens\editar.png" style="border:0"/>
-                        <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
-                    </h:commandLink>
+                    <center>
+                        <h:commandLink action="#{produtosInstituicao.editar()}">
+                            <h:graphicImage value="imagens\editar.png" style="border:0"/>
+                            <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
+                        </h:commandLink>
+                    </center>
                 </p:column>
-                
+
                 <p:column headerText="Excluir">
-                    <h:commandLink action="#{produtosInstituicao.excluir()}">
-                        <h:graphicImage value="imagens\excluir.png" style="border:0"/>
-                        <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
-                    </h:commandLink>
+                    <center>
+                        <h:commandLink action="#{produtosInstituicao.excluir()}">
+                            <h:graphicImage value="imagens\excluir.png" style="border:0"/>
+                            <f:setPropertyActionListener target="#{produtosInstituicao.produto}" value="#{produto}"/>
+                        </h:commandLink>
+                    </center>
                 </p:column>
             </p:dataTable>
             <p:commandButton value="Novo Produto" action="#{produtosInstituicao.novo()}"/>

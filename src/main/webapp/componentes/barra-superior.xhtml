@@ -23,13 +23,14 @@
                 <!-- Sair -->
                 <!-- Login -->
                 <!-- Cadastre-se -->
+                <h:commandLink action="#{barraSuperior.inicio()}">
+                    <h:graphicImage value="imagens\logo-with-small-title.svg" style="border:0"/>
+                </h:commandLink>
                 <p:menubar>
-                    <p:menuitem value="Mercado Social"/>
-
                     <f:facet name="options">
                         <!--<p:commandButton value="7" icon="fa fa-heart-o" />-->
-                        <p:commandButton value="Login" icon="fa fa-cog" action="#{loginView.redirecionarLogin()}"/>
-                        <p:commandButton type="button" value="Cadastro" icon="ui-icon-extlink" />
+                        <p:commandButton value="Login" action="#{loginView.redirecionarLogin()}"/>
+                        <p:commandButton type="button" value="Cadastro"/>
                     </f:facet>
                 </p:menubar>
             </h:form>

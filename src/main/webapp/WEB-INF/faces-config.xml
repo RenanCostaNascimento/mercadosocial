@@ -27,13 +27,25 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
             <from-outcome>novoProduto</from-outcome>
             <to-view-id>/configuracao-contribuidora-novo-produto.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>produtoExcluido</from-outcome>
+            <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listarProdutos</from-outcome>
+            <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/cadastrar-produto.xhtml</from-view-id>
+        <from-view-id>/configuracao-contribuidora-novo-produto.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>sucesso</from-outcome>
-            <to-view-id>/configuracao-contribuidora-novo-produto.xhtml</to-view-id>
+            <from-outcome>produtoCriado</from-outcome>
+            <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listarProdutos</from-outcome>
+            <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
@@ -43,6 +55,10 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         <navigation-case>
             <from-outcome>login</from-outcome>
             <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>logout</from-outcome>

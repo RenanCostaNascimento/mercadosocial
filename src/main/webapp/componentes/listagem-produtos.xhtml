@@ -17,26 +17,36 @@
                     <p:outputLabel value="Produtos em Oferta"/>
                 </f:facet>
                 <p:column headerText="Nome">
-                    <h:outputText value="#{produto.nome}" />
+                    <center>
+                        <h:outputText value="#{produto.nome}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Preço">
-                    <h:outputText value="#{produto.preco}" />
+                    <center>
+                        <h:outputText value="#{produto.preco}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Descrição">
-                    <h:outputText value="#{produto.descricao}" />
+                    <center>
+                        <h:outputText value="#{produto.descricao}" />
+                    </center>
                 </p:column>
 
                 <p:column headerText="Imagem">
-                    <p:graphicImage value="#{produto.imagem}" width="200px" height="150px"/>
+                    <center>
+                        <p:graphicImage value="#{produto.imagem}" style="border:0" width="200px" height="150px"/>
+                    </center>
                 </p:column>
 
                 <p:column headerText="Comprar">
-                    <h:commandLink action="#{listagemProdutos.comprar()}">
-                        <h:graphicImage value="imagens\editar.png" style="border:0"/>
-                        <f:setPropertyActionListener target="#{listagemProdutos.produto}" value="#{produto}"/>
-                    </h:commandLink>
+                    <center>
+                        <h:commandLink action="#{listagemProdutos.comprar()}">
+                            <h:graphicImage value="imagens\editar.png" style="border:0"/>
+                            <f:setPropertyActionListener target="#{listagemProdutos.produto}" value="#{produto}"/>
+                        </h:commandLink>
+                    </center>
                 </p:column>
             </p:dataTable>
         </h:form>

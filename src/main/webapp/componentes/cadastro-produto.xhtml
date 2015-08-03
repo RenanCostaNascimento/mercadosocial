@@ -32,8 +32,11 @@
                 <p:outputLabel value="Imagem do Produto" for="imagem"/>
                 <p:fileUpload id="imagem" label="Imagem" multiple="false" allowTypes="*.jpg; *.png; *.gif;" mode="simple" value="#{cadastroProduto.imagem}"/>
 
-                <p:commandButton value="Salvar" action="#{cadastroProduto.salvar()}" ajax="false" update="message"/>
-
+                <f:facet name="footer">
+                    <center>
+                        <p:commandButton value="Salvar" action="#{cadastroProduto.salvar()}" ajax="false" update="message"/>
+                    </center>
+                </f:facet>
             </p:panelGrid>
         </h:form>
     </h:body>
