@@ -57,8 +57,10 @@
                         </h:commandLink>
                     </center>
                 </p:column>
+                <f:facet name="footer">
+                    <p:commandButton value="Novo Produto" action="#{produtosInstituicao.novo()}"/>
+                </f:facet>
             </p:dataTable>
-            <p:commandButton value="Novo Produto" action="#{produtosInstituicao.novo()}"/>
         </h:form>
     </h:body>
 </html>

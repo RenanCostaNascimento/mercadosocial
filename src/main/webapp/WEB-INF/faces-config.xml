@@ -35,6 +35,10 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
             <from-outcome>listarProdutos</from-outcome>
             <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>editarProduto</from-outcome>
+            <to-view-id>/configuracao-contribuidora-novo-produto.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>

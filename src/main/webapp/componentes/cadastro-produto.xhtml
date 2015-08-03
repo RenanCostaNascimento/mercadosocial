@@ -18,23 +18,23 @@
                 </f:facet>
 
                 <p:outputLabel value="Nome do produto" for="nome"/>
-                <p:inputText id="nome" label="Nome" value="#{cadastroProduto.nome}"/>
+                <p:inputText id="nome" label="Nome" value="#{produtosInstituicao.produto.nome}"/>
 
                 <p:outputLabel value="Preço unitário" for="preco"/>
-                <p:inputText id="preco" label="Preço" value="#{cadastroProduto.preco}"/>
+                <p:inputText id="preco" label="Preço" value="#{produtosInstituicao.produto.preco}"/>
 
                 <p:outputLabel value="Quantidade em Estoque" for="quantidade"/>
-                <p:inputText id="quantidade" label="Quantidade" value="#{cadastroProduto.quantidade}"/>
+                <p:inputText id="quantidade" label="Quantidade" value="#{produtosInstituicao.produto.quantidade}"/>
 
                 <p:outputLabel value="Descrição do Produto" for="descricao"/>
-                <p:inputTextarea id="descricao" label="Descrição" value="#{cadastroProduto.descricao}"/>
+                <p:inputTextarea id="descricao" label="Descrição" value="#{produtosInstituicao.produto.descricao}"/>
 
                 <p:outputLabel value="Imagem do Produto" for="imagem"/>
-                <p:fileUpload id="imagem" label="Imagem" multiple="false" allowTypes="*.jpg; *.png; *.gif;" mode="simple" value="#{cadastroProduto.imagem}"/>
+                <p:fileUpload id="imagem" label="Imagem" multiple="false" allowTypes="*.jpg; *.png; *.gif;" mode="simple" value="#{produtosInstituicao.imagem}"/>
 
                 <f:facet name="footer">
                     <center>
-                        <p:commandButton value="Salvar" action="#{cadastroProduto.salvar()}" ajax="false" update="message"/>
+                        <p:commandButton value="Salvar" action="#{produtosInstituicao.salvar()}" ajax="false" update="message"/>
                     </center>
                 </f:facet>
             </p:panelGrid>
