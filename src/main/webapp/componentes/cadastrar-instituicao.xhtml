@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="message" showDetail="true"/>
+            <p:panelGrid columns="2">
+                <f:facet name="header">
+                    <p:outputLabel value="Cadastro de Instituição"/>
+                </f:facet>
+                <p:outputLabel for="nome" value="Nome Fantasia" />
+                <p:inputText id="nome" value="#{cadastroInstituicao.nomeFantasia}" required="true" label="nome" />
+
+                <p:outputLabel for="razao" value="Razão Social" />
+                <p:inputText id="razao" value="#{cadastroInstituicao.razaoSocial}" required="true" label="razao" />
+
+                <p:outputLabel for="tipo" value="Tipo de Instituição" />
+                <h:panelGrid columns="2">
+                    <p:selectOneRadio id="tipo" value="#{cadastroInstituicao.tipo}">
+                        <f:selectItem itemLabel="Beneficente" itemValue="beneficente" />
+                        <f:selectItem itemLabel="Contribuidora" itemValue="contribuidora" />
+                    </p:selectOneRadio>
+                </h:panelGrid>
+
+                <p:outputLabel for="cnpj" value="CNPJ" />
+                <p:inputText id="cnpj" value="#{cadastroInstituicao.cnpj}" required="true" label="cnpj" />
+
+                <p:outputLabel for="email" value="Email" />
+                <p:inputText id="email" value="#{cadastroInstituicao.email}" required="true" label="email" />
+
+                <p:outputLabel for="senha" value="Senha" />
+                <p:password id="senha" value="#{cadastroInstituicao.senha}" required="true" label="senha" />
+
+                <f:facet name="footer">
+                    <center>
+                        <p:commandButton value="Cadastrar" update="message" action="#{cadastroInstituicao.cadastrar()}" />
+                    </center>
+                </f:facet>  
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

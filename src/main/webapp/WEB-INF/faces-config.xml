@@ -20,7 +20,19 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
             <to-view-id>/pagina-inicial-cliente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
+    <navigation-rule>
+        <from-view-id>/cadastro.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>clienteCadastrado</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>instituicaoCadastrada</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
     <navigation-rule>
         <from-view-id>/configuracao-contribuidora.xhtml</from-view-id>
         <navigation-case>
@@ -70,7 +82,7 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         </navigation-case>
         <navigation-case>
             <from-outcome>cadastro</from-outcome>
-            <to-view-id>/tela-de-cadastro.xhtml</to-view-id>
+            <to-view-id>/cadastro.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
        
