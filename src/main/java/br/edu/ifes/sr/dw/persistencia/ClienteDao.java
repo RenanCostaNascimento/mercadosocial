@@ -15,5 +15,6 @@ public interface ClienteDao {
     public void salvar(Cliente cliente);
     public void atualizar(Cliente cliente);
     public Cliente buscar(String cpf);
+    public Cliente buscarPorEmail(String email);
     public Cliente validarLogin(String email, String senha);
 }

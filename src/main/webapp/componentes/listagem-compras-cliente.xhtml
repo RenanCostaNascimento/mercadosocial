@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="message" showDetail="true"/>
+            <p:dataTable var="compra" value="#{administracaoCliente.cliente.comprasRealizadas}">
+                <f:facet name="header">
+                    <p:outputLabel value="Histórico de Compras"/>
+                </f:facet>
+                <p:column headerText="Data da Compra">
+                    <center>
+                        <h:outputText value="#{compra.dataCompra}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Nome do Produto">
+                    <center>
+                        <h:outputText value="#{compra.produto.nome}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Preço">
+                    <center>
+                        <h:outputText value="#{compra.produto.preco}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Descrição">
+                    <center>
+                        <h:outputText value="#{compra.produto.descricao}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Imagem">
+                    <center>
+                        <p:graphicImage value="#{compra.produto.imagem}" style="border:0" width="200px" height="150px"/>
+                    </center>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
