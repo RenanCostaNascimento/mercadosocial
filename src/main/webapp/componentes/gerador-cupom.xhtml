@@ -15,7 +15,7 @@
                 <p:growl id="message" showDetail="true"/>
                 <p:panelGrid columns="2" >
                     <f:facet name="header">
-                        <p:outputLabel value="Dados do Voluntário"/>
+                        <p:outputLabel value="Dados do Voluntário Para Gerar Cupom"/>
                     </f:facet>
 
                     <p:outputLabel value="CPF" for="cpf"/>
@@ -25,9 +25,9 @@
                     <p:inputText id="email" label="Email" value="#{geradorCupom.emailVoluntario}"/>
 
                     <p:outputLabel value="Horas Trabalhadas" for="horas"/>
-                    <p:inputText id="horas" label="Horas" value="#{geradorCupom.horasTrabalhadas}"/>                
+                    <p:inputText id="horas" label="Horas" value="#{geradorCupom.horasTrabalhadas}"/>
 
-                    <p:commandButton value="Gerar Cupom" action="#{geradorCupom.gerarCupom()}"/>
+                    <p:commandButton value="Gerar Cupom" action="#{geradorCupom.cadastrar()}"/>
 
                 </p:panelGrid>
             </h:form>

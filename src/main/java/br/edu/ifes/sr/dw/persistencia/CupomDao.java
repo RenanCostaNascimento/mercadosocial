@@ -5,15 +5,15 @@
  */
 package br.edu.ifes.sr.dw.persistencia;
 
-import br.edu.ifes.sr.dw.modelos.Cliente;
+import br.edu.ifes.sr.dw.modelos.Cupom;
+import java.util.List;
 
 /**
  *
  * @author Renan
  */
-public interface ClienteDao {
-    public void salvar(Cliente cliente);
-    public void atualizar(Cliente cliente);
-    public Cliente buscar(String cpf);
-    public Cliente validarLogin(String email, String senha);
+public interface CupomDao {
+    public void salvar(Cupom cupom);
+    public void atualizar(Cupom cupom);
+    public List<Cupom> buscarPorInstituicao(String email);
 }

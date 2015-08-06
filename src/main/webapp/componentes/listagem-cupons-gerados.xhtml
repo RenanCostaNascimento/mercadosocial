@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <!--<h:form>-->
+            <p:growl id="message" showDetail="true"/>
+            <p:dataTable var="cupom" value="#{listagemCuponsGerados.cupons}">
+                <f:facet name="header">
+                    <p:outputLabel value="Cupons Gerados"/>
+                </f:facet>
+                <p:column headerText="Código">
+                    <center>
+                        <h:outputText value="#{cupom.codigo}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Data de Expiração">
+                    <center>
+                        <h:outputText value="#{cupom.dataExpiracao}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Moedas Sociais">
+                    <center>
+                        <h:outputText value="#{cupom.moedasSociais}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Resgatado">
+                    <center>
+                        <h:outputText value="#{cupom.resgatado}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Cliente">
+                    <center>
+                        <h:outputText value="#{cupom.cliente.nome}" />
+                    </center>
+                </p:column>
+
+                <p:column headerText="Instituicao">
+                    <center>
+                        <h:outputText value="#{cupom.instituicao.nomeFantasia}" />
+                    </center>
+                </p:column>
+            </p:dataTable>
+        <!--</h:form>-->
+    </h:body>
+</html>

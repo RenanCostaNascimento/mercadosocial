@@ -33,4 +33,10 @@ public class DaoFactory {
         clienteDaoHibernate.setSession(HibernateUtil.getSessionFactory().openSession());
         return clienteDaoHibernate;
     }
+    
+    public static CupomDao criarCupomDao() {
+        CupomDaoHibernate cupomDaoHibernate = new CupomDaoHibernate();
+        cupomDaoHibernate.setSession(HibernateUtil.getSessionFactory().openSession());
+        return cupomDaoHibernate;
+    }
 }

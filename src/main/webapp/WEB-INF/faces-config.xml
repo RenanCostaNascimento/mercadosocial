@@ -13,11 +13,11 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         </navigation-case>
         <navigation-case>
             <from-outcome>beneficente</from-outcome>
-            <to-view-id>/pagina-inicial-instituicao-beneficente.xhtml</to-view-id>
+            <to-view-id>/configuracao-beneficente.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>cliente</from-outcome>
-            <to-view-id>/pagina-inicial-cliente.xhtml</to-view-id>
+            <to-view-id>/configuracao-cliente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

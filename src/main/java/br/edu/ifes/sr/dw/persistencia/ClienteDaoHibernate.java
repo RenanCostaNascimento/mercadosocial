@@ -31,6 +31,18 @@ public class ClienteDaoHibernate extends DaoHibernate implements ClienteDao{
     }
 
     @Override
+    public Cliente buscar(String cpf) {
+        session.getTransaction().begin();
+        String hql = "select c from Cliente c where c.cpf = :cpf";
+        Query consulta = session.createQuery(hql);
+        consulta.setString("cpf", cpf);
+        Cliente cliente = (Cliente) consulta.uniqueResult();
+        session.getTransaction().commit();
+        session.close();
+        return cliente;
+    }
+
+    @Override
     public Cliente validarLogin(String email, String senha) {
         session.getTransaction().begin();
         String hql = "select c from Cliente c where c.email = :email and c.senha = :senha ";
