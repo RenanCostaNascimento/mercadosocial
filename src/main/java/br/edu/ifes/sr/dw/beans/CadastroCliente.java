@@ -14,32 +14,39 @@ import javax.faces.bean.RequestScoped;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 @Getter
 @Setter
 @ManagedBean(name = "cadastroCliente")
 @RequestScoped
 public class CadastroCliente {
-
+    
     private String nome;
     private String cpf;
     private String email;
     private String senha;
-
+    
     public String cadastrar() {
         ClienteDao clienteDao = DaoFactory.criarClienteDao();
         
-        Cliente cliente = new Cliente();
-        cliente.setNome(nome);
-        cliente.setCpf(cpf);
-        cliente.setEmail(email);
-        cliente.setSenha(senha);
-        cliente.setMoedasSociais(0.d);
-
-        clienteDao.salvar(cliente);
+        Cliente cliente = clienteDao.buscar(cpf);
+        
+        if (cliente == null) {
+            cliente = new Cliente();
+            cliente.setNome(nome);
+            cliente.setCpf(cpf);
+            cliente.setEmail(email);
+            cliente.setSenha(senha);
+            cliente.setMoedasSociais(0.d);
+            clienteDao.salvar(cliente);
+        } else {
+            cliente.setNome(nome);
+            cliente.setSenha(senha);
+            cliente.setMoedasSociais(0.d);
+            clienteDao.atualizar(cliente);
+        }
+        
         ContextMessage.addMessage("Sucesso", "Cliente cadastrado com sucesso. Agora faça login na área apropriada.");
         return "clienteCadastrado";
     }
-
+    
 }
