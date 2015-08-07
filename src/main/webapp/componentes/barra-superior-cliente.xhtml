@@ -19,6 +19,7 @@
                 <p:menubar>
 
                     <f:facet name="options">
+                        <p:commandButton value="#{loginView.pegarMoedasSociais()}" icon="fa fa-heart-o" />
                         <p:commandButton value="Logado como: #{loginView.pegarEmailUsuarioLogado()}" action="#{barraSuperior.configuracaoCliente()}"/>
                         <p:commandButton value="Logout" action="#{loginView.logout()}"/>
                     </f:facet>

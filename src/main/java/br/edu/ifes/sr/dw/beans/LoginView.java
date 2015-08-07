@@ -74,4 +74,9 @@ public class LoginView {
         }
         return "vazio";
     }
+    
+    public double pegarMoedasSociais(){
+        ClienteDao clienteDao = DaoFactory.criarClienteDao();
+        return clienteDao.buscarPorEmail(email).getMoedasSociais();
+    }
 }
