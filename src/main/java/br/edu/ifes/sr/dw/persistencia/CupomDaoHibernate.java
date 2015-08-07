@@ -5,8 +5,8 @@
  */
 package br.edu.ifes.sr.dw.persistencia;
 
+import br.edu.ifes.sr.dw.conexao.HibernateUtil;
 import br.edu.ifes.sr.dw.modelos.Cupom;
-import br.edu.ifes.sr.dw.modelos.Produto;
 import java.util.List;
 import org.hibernate.Query;
 
@@ -26,6 +26,7 @@ public class CupomDaoHibernate extends DaoHibernate implements CupomDao {
 
     @Override
     public void atualizar(Cupom cupom) {
+        session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
         session.update(cupom);
         session.getTransaction().commit();
@@ -42,6 +43,19 @@ public class CupomDaoHibernate extends DaoHibernate implements CupomDao {
         session.getTransaction().commit();
         session.close();
         return cupons;
+    }
+
+    @Override
+    public Cupom buscarCodigoCpfCliente(String codigo, String cpf) {
+        session.getTransaction().begin();
+        String hql = "select c from Cupom c inner join c.cliente cl where c.codigo = :codigo and cl.cpf = :cpf";
+        Query consulta = session.createQuery(hql);
+        consulta.setString("codigo", codigo);
+        consulta.setString("cpf", cpf);
+        Cupom cupom = (Cupom) consulta.uniqueResult();
+        session.getTransaction().commit();
+        session.close();
+        return cupom;
     }
 
 }
