@@ -16,8 +16,12 @@ import lombok.Setter;
 @RequestScoped
 public class UtilBean {
 
-    public String redirecionarCadastro() {
-        return "cadastro";
+    public String redirecionarCadastroCliente() {
+        return "cadastroCliente";
+    }
+
+    public String redirecionarCadastroInstituicao() {
+        return "cadastroInstituicao";
     }
 
 }

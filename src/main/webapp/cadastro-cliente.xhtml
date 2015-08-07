@@ -12,18 +12,7 @@
 
         <ui:define name="conteudo">
 
-            <p:tabView>
-                <p:tab title="Cadastro de Cliente">
-                <h:panelGrid columns="2" cellpadding="10">
-                    <ui:include src="componentes/cadastrar-cliente.xhtml" />
-                </h:panelGrid>
-                </p:tab>
-                <p:tab title="Cadastro de Instituicao">
-                    <h:panelGrid columns="2" cellpadding="10">
-                        <ui:include src="componentes/cadastrar-instituicao.xhtml" />
-                    </h:panelGrid>
-                </p:tab>
-            </p:tabView>
+            <ui:include src="componentes/cadastrar-cliente.xhtml" />
 
         </ui:define>
     </ui:composition>
