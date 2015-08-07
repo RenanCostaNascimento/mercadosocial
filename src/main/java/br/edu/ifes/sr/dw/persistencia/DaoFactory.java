@@ -39,4 +39,10 @@ public class DaoFactory {
         cupomDaoHibernate.setSession(HibernateUtil.getSessionFactory().openSession());
         return cupomDaoHibernate;
     }
+    
+    public static ComprasDao criarComprasDao() {
+        ComprasDaoHibernate comprasDaoHibernate = new ComprasDaoHibernate();
+        comprasDaoHibernate.setSession(HibernateUtil.getSessionFactory().openSession());
+        return comprasDaoHibernate;
+    }
 }

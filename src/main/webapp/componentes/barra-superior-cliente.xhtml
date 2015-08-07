@@ -13,11 +13,13 @@
         <ui:composition>
 
             <h:form>
-                <h:graphicImage value="imagens\logo-with-small-title.svg" style="border:0"/>
+                <h:commandLink action="#{barraSuperior.inicio()}">
+                    <h:graphicImage value="imagens\logo-with-small-title.svg" style="border:0"/>
+                </h:commandLink>
                 <p:menubar>
 
                     <f:facet name="options">
-                        <p:commandButton value="Logado como: #{loginView.pegarEmailUsuarioLogado()}"/>
+                        <p:commandButton value="Logado como: #{loginView.pegarEmailUsuarioLogado()}" action="#{barraSuperior.configuracaoCliente()}"/>
                         <p:commandButton value="Logout" action="#{loginView.logout()}"/>
                     </f:facet>
                 </p:menubar>

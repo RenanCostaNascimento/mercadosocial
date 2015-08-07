@@ -45,6 +45,12 @@ public class Compra implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idcliente")
     private Cliente cliente;
+    
+    public Compra(Date dataCompra, Produto produto, Cliente cliente){
+        this.dataCompra = dataCompra;
+        this.produto = produto;
+        this.cliente = cliente;
+    }
 
     
 }

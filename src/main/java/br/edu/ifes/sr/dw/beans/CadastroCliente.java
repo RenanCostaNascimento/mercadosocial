@@ -35,7 +35,7 @@ public class CadastroCliente {
         cliente.setCpf(cpf);
         cliente.setEmail(email);
         cliente.setSenha(senha);
-        cliente.setMoedasSociais("0");
+        cliente.setMoedasSociais(0.d);
 
         clienteDao.salvar(cliente);
         ContextMessage.addMessage("Sucesso", "Cliente cadastrado com sucesso. Agora faça login na área apropriada.");

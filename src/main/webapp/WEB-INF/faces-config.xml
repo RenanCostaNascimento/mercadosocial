@@ -9,7 +9,7 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>cliente</from-outcome>
-            <to-view-id>/configuracao-cliente.xhtml</to-view-id>
+            <to-view-id>/index-cliente-logado.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>contribuidora</from-outcome>
@@ -91,6 +91,10 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         <navigation-case>
             <from-outcome>cadastro</from-outcome>
             <to-view-id>/cadastro.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>configuracaoCliente</from-outcome>
+            <to-view-id>/configuracao-cliente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
        

@@ -44,7 +44,7 @@ public class Cliente implements Serializable {
     private String email;
     
     @Column(name = "moedassociais")
-    private String moedasSociais;
+    private Double moedasSociais;
     
     @Column(name = "senha")
     private String senha;

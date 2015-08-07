@@ -27,4 +27,8 @@ public class BarraSuperior {
     public String cadastro() {
         return "cadastro";
     }
+    
+    public String configuracaoCliente() {
+        return "configuracaoCliente";
+    }
 }

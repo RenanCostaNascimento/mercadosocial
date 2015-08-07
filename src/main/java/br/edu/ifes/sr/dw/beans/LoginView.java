@@ -69,6 +69,9 @@ public class LoginView {
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
         Map sessionMap = externalContext.getSessionMap();
         LoginView loginView = (LoginView) sessionMap.get("loginView");
-        return loginView.getEmail();
+        if(loginView != null){
+            return loginView.getEmail();
+        }
+        return "vazio";
     }
 }
