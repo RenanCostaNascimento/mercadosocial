@@ -51,6 +51,8 @@ public class Compra implements Serializable {
         this.produto = produto;
         this.cliente = cliente;
     }
+    
+    public Compra(){}
 
     
 }

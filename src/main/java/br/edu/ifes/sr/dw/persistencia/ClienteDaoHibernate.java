@@ -26,6 +26,7 @@ public class ClienteDaoHibernate extends DaoHibernate implements ClienteDao{
 
     @Override
     public void atualizar(Cliente cliente) {
+        session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
         session.update(cliente);
         session.getTransaction().commit();
