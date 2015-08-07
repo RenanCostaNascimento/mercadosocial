@@ -8,7 +8,6 @@ package br.edu.ifes.sr.dw.modelos;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -73,6 +72,9 @@ public class Cupom implements Serializable{
         this.cliente = cliente;
         this.moedasSociais = horasTrabalhadas*5;
         this.resgatado = false;
+        Calendar data = Calendar.getInstance();
+        data.add(Calendar.YEAR, 1);
+        this.dataExpiracao = data.getTime();
     } 
     
     public Cupom(int id, String codigo, Instituicao instituicao, Cliente cliente, int moedasSociais, boolean resgatado){

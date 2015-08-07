@@ -5,6 +5,7 @@
  */
 package br.edu.ifes.sr.dw.persistencia;
 
+import br.edu.ifes.sr.dw.conexao.HibernateUtil;
 import br.edu.ifes.sr.dw.modelos.Cliente;
 import org.hibernate.Query;
 
@@ -16,6 +17,7 @@ public class ClienteDaoHibernate extends DaoHibernate implements ClienteDao{
     
     @Override
     public void salvar(Cliente cliente) {
+        session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
         session.save(cliente);
         session.getTransaction().commit();

@@ -8,16 +8,16 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
     <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/configuracao-cliente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>contribuidora</from-outcome>
             <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>beneficente</from-outcome>
             <to-view-id>/configuracao-beneficente.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>cliente</from-outcome>
-            <to-view-id>/configuracao-cliente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 
@@ -62,6 +62,14 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
         <navigation-case>
             <from-outcome>listarProdutos</from-outcome>
             <to-view-id>/configuracao-contribuidora.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/configuracao-beneficente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cupomCadastrado</from-outcome>
+            <to-view-id>/configuracao-beneficente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     

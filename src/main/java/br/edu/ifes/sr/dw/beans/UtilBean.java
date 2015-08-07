@@ -6,14 +6,14 @@
 package br.edu.ifes.sr.dw.beans;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @ManagedBean(name = "utilBean")
-@SessionScoped
+@RequestScoped
 public class UtilBean {
 
     public String redirecionarCadastro() {

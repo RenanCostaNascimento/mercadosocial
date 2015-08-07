@@ -13,6 +13,8 @@ import br.edu.ifes.sr.dw.persistencia.CupomDao;
 import br.edu.ifes.sr.dw.persistencia.DaoFactory;
 import br.edu.ifes.sr.dw.persistencia.InstituicaoDao;
 import br.edu.ifes.sr.dw.utils.ContextMessage;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import lombok.Data;
@@ -25,10 +27,9 @@ public class GeradorCupom {
     private int horasTrabalhadas;
     private String cpfVoluntario;
     private String emailVoluntario;
+    private List<Cupom> cupons;
 
     public String cadastrar() {
-        System.out.println("CADASTRAR!!");
-        ContextMessage.addMessage("Gerando o Cupom", "O cupom está sendo gerado. Aguarde Pacientemente.");
         CupomDao cupomDao = DaoFactory.criarCupomDao();
         InstituicaoDao instituicaoDao = DaoFactory.criarInstituicaoDao();
         ClienteDao clienteDao = DaoFactory.criarClienteDao();
@@ -50,7 +51,16 @@ public class GeradorCupom {
         Cupom cupom = Cupom.gerarCupom(instituicao, cliente, horasTrabalhadas);
         cupomDao.salvar(cupom);
         ContextMessage.addMessage("Cupom Gerado", "Cupom gerado com sucesso.");
+        preencherListaCupom();
         return "cupomCadastrado";
+    }
+    
+    @PostConstruct
+    public void preencherListaCupom() {
+        CupomDao cupomDao = DaoFactory.criarCupomDao();
+        String email = LoginView.pegarEmailUsuarioLogado();
+
+        cupons = cupomDao.buscarPorInstituicao(email);
     }
 
 }

@@ -27,7 +27,7 @@
                     <p:outputLabel value="Horas Trabalhadas" for="horas"/>
                     <p:inputText id="horas" label="Horas" value="#{geradorCupom.horasTrabalhadas}"/>
 
-                    <p:commandButton value="Gerar Cupom" action="#{geradorCupom.cadastrar()}"/>
+                    <p:commandButton value="Gerar Cupom" action="#{geradorCupom.cadastrar()}" ajax="false" update="message"/>
 
                 </p:panelGrid>
             </h:form>
