@@ -17,4 +17,5 @@ public interface CupomDao {
     public void atualizar(Cupom cupom);
     public List<Cupom> buscarPorInstituicao(String email);
     public Cupom buscarCodigoCpfCliente(String codigo, String cpf);
+    public List<Cupom> buscarPorCliente(String email);
 }

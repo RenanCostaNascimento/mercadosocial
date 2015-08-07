@@ -22,40 +22,35 @@ import lombok.Data;
 @ManagedBean
 @RequestScoped
 public class GeradorMoeda {
-    
+
     private String codigo;
+    private Cupom cupom;
     private List<Cupom> cupons;
 
-    public void gerarMoedaSocial(){
+    public void gerarMoedaSocial() {
         CupomDao cupomDao = DaoFactory.criarCupomDao();
         ClienteDao clienteDao = DaoFactory.criarClienteDao();
-        
+
         Cliente cliente = clienteDao.buscarPorEmail(LoginView.pegarEmailUsuarioLogado());
-        Cupom cupom = cupomDao.buscarCodigoCpfCliente(codigo, cliente.getCpf());
-        if(cupom != null){
-            if(cupom.getDataExpiracao().after(Calendar.getInstance().getTime())){
-                cliente.setMoedasSociais(cliente.getMoedasSociais() + cupom.getMoedasSociais());
-                cupom.setResgatado(true);
-                clienteDao.atualizar(cliente);
-                cupomDao.atualizar(cupom);
-                preencherListaCupom();
-                ContextMessage.addMessage("Sucesso", "Moedas sociais geradas com sucesso.");
-            }else{
-                ContextMessage.addMessage("Erro", "Cupom expirado.");
-            }
-        }else{
-            ContextMessage.addMessage("Erro", "Código do cupom inválido para o usuário de cpf " + cliente.getCpf() + ".");
+
+        if (cupom.getDataExpiracao().after(Calendar.getInstance().getTime())) {
+            cliente.setMoedasSociais(cliente.getMoedasSociais() + cupom.getMoedasSociais());
+            cupom.setResgatado(true);
+            clienteDao.atualizar(cliente);
+            cupomDao.atualizar(cupom);
+            preencherListaCupom();
+            ContextMessage.addMessage("Sucesso", "Moedas sociais geradas com sucesso.");
+        } else {
+            ContextMessage.addMessage("Erro", "Cupom expirado.");
         }
-        
-        
     }
-    
+
     @PostConstruct
     public void preencherListaCupom() {
         CupomDao cupomDao = DaoFactory.criarCupomDao();
         String email = LoginView.pegarEmailUsuarioLogado();
 
-        cupons = cupomDao.buscarPorInstituicao(email);
+        cupons = cupomDao.buscarPorCliente(email);
     }
 
 }

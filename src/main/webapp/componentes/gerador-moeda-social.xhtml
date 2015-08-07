@@ -9,35 +9,45 @@
 
     <h:head>
     </h:head>
-    <h:body>
-        <h:form>
-            <p:growl id="message" showDetail="true"/>
-            <p:panelGrid columns="2" >
-                <f:facet name="header">
-                    <p:outputLabel value="Dados do Cupom"/>
-                </f:facet>
 
-                <p:outputLabel value="Código do Cupom" for="codigo"/>
-                <p:inputText id="codigo" label="Código" value="#{geradorMoeda.codigo}"/>
+    <h:form>
+        <p:growl id="message" showDetail="true"/>
+        <p:dataTable var="cupom" value="#{geradorMoeda.cupons}">
+            <f:facet name="header">
+                <p:outputLabel value="Cupons" />
+            </f:facet>
+            <p:column headerText="Código">
+                <center>
+                    <h:outputText value="#{cupom.codigo}" />
+                </center>
+            </p:column>
 
-                <p:commandButton value="Trocar" action="#{geradorMoeda.gerarMoedaSocial()}" update="message"/>
+            <p:column headerText="Data de Expiração">
+                <center>
+                    <h:outputText value="#{cupom.dataExpiracao}" />
+                </center>
+            </p:column>
 
-            </p:panelGrid>
-        </h:form>
-    </h:body>
+            <p:column headerText="Moedas Sociais">
+                <center>
+                    <h:outputText value="#{cupom.moedasSociais}" />
+                </center>
+            </p:column>
 
-    <hr/>
+            <p:column headerText="Nome da Instituição Emissora">
+                <center>
+                    <h:outputText value="#{cupom.instituicao.nomeFantasia}" />
+                </center>
+            </p:column>
 
-    <p:dataTable var="cupons" value="#{geradorMoeda.cupons}">
-        <f:facet name="header">
-            <p:outputLabel value="Cupons em Aberto"/>
-        </f:facet>
-        <p:column headerText="Moedas Resgatadas">
-            <h:outputText value="#{cupons.moedasSociais}" />
-        </p:column>
-
-        <p:column headerText="Data de Resgate">
-            <h:outputText value="#{cupons.dataTroca}" />
-        </p:column>
-    </p:dataTable>
+            <p:column headerText="Resgatar">
+                <center>
+                    <h:commandLink action="#{geradorMoeda.gerarMoedaSocial()}">
+                        <h:graphicImage value="imagens\editar.png" style="border:0"/>
+                        <f:setPropertyActionListener target="#{geradorMoeda.cupom}" value="#{cupom}"/>
+                    </h:commandLink>
+                </center>
+            </p:column>
+        </p:dataTable>
+    </h:form>
 </html>

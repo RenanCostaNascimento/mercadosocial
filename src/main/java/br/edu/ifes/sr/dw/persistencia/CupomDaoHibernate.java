@@ -57,5 +57,18 @@ public class CupomDaoHibernate extends DaoHibernate implements CupomDao {
         session.close();
         return cupom;
     }
+    
+    @Override
+    public List<Cupom> buscarPorCliente(String email) {
+        session.getTransaction().begin();
+        String hql = "select c from Cupom c inner join c.cliente cli where cli.email = :email and c.resgatado = :resgatado";
+        Query consulta = session.createQuery(hql);
+        consulta.setString("email", email);
+        consulta.setBoolean("resgatado", false);
+        List<Cupom> cupons = (List<Cupom>) consulta.list();
+        session.getTransaction().commit();
+        session.close();
+        return cupons;
+    }
 
 }
