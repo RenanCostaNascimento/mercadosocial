@@ -16,4 +16,5 @@ public interface CupomDao {
     public void salvar(Cupom cupom);
     public void atualizar(Cupom cupom);
     public List<Cupom> buscarPorInstituicao(String email);
+    public List<Cupom> buscarPorCliente(String email);
 }

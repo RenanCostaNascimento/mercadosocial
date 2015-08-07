@@ -28,16 +28,39 @@
 
     <hr/>
 
-    <p:dataTable var="cupons" value="#{geradorMoeda.cupons}">
+    <p:growl id="message" showDetail="true"/>
+    <p:dataTable var="cupom" value="#{geradorMoeda.cupons}">
         <f:facet name="header">
-            <p:outputLabel value="Cupons em Aberto"/>
+            <p:outputLabel value="Cupons" />
         </f:facet>
-        <p:column headerText="Moedas Resgatadas">
-            <h:outputText value="#{cupons.moedasSociais}" />
+        <p:column headerText="Código">
+            <center>
+                <h:outputText value="#{cupom.codigo}" />
+            </center>
         </p:column>
 
-        <p:column headerText="Data de Resgate">
-            <h:outputText value="#{cupons.dataTroca}" />
+        <p:column headerText="Data de Expiração">
+            <center>
+                <h:outputText value="#{cupom.dataExpiracao}" />
+            </center>
+        </p:column>
+
+        <p:column headerText="Moedas Sociais">
+            <center>
+                <h:outputText value="#{cupom.moedasSociais}" />
+            </center>
+        </p:column>
+
+        <p:column headerText="Nome da Instituição Emissora">
+            <center>
+                <h:outputText value="#{cupom.instituicao.nomeFantasia}" />
+            </center>
+        </p:column>
+
+        <p:column headerText="Resgatado?">
+            <center>
+                <h:outputText value="#{cupom.resgatado}" />
+            </center>
         </p:column>
     </p:dataTable>
 </html>

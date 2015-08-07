@@ -27,14 +27,12 @@ public class GeradorMoeda {
     private String codigo;
     private List<Cupom> cupons;
 
-    
-    
     @PostConstruct
     public void preencherListaCupom() {
         CupomDao cupomDao = DaoFactory.criarCupomDao();
         String email = LoginView.pegarEmailUsuarioLogado();
 
-        cupons = cupomDao.buscarPorInstituicao(email);
+        cupons = cupomDao.buscarPorCliente(email);
     }
 
 }
